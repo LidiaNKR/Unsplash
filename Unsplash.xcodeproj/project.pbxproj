@@ -12,6 +12,9 @@
 		F8B502A52A362E4900471387 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B502A42A362E4900471387 /* ViewController.swift */; };
 		F8B502AA2A362E4B00471387 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8B502A92A362E4B00471387 /* Assets.xcassets */; };
 		F8B502AD2A362E4B00471387 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8B502AB2A362E4B00471387 /* LaunchScreen.storyboard */; };
+		F8DE3FE72A363505001BCADA /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DE3FE62A363505001BCADA /* MainTabBarController.swift */; };
+		F8DE3FE92A3638A4001BCADA /* RandomPhotoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DE3FE82A3638A4001BCADA /* RandomPhotoCollectionViewController.swift */; };
+		F8DE3FF02A3667BD001BCADA /* FavoritPhotoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DE3FEF2A3667BD001BCADA /* FavoritPhotoTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		F8B502A92A362E4B00471387 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F8B502AC2A362E4B00471387 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F8B502AE2A362E4B00471387 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F8DE3FE62A363505001BCADA /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		F8DE3FE82A3638A4001BCADA /* RandomPhotoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomPhotoCollectionViewController.swift; sourceTree = "<group>"; };
+		F8DE3FEF2A3667BD001BCADA /* FavoritPhotoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritPhotoTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +80,9 @@
 			isa = PBXGroup;
 			children = (
 				F8B502A42A362E4900471387 /* ViewController.swift */,
+				F8DE3FE62A363505001BCADA /* MainTabBarController.swift */,
+				F8DE3FE82A3638A4001BCADA /* RandomPhotoCollectionViewController.swift */,
+				F8DE3FEF2A3667BD001BCADA /* FavoritPhotoTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -174,8 +183,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8DE3FF02A3667BD001BCADA /* FavoritPhotoTableViewController.swift in Sources */,
 				F8B502A52A362E4900471387 /* ViewController.swift in Sources */,
+				F8DE3FE92A3638A4001BCADA /* RandomPhotoCollectionViewController.swift in Sources */,
 				F8B502A12A362E4900471387 /* AppDelegate.swift in Sources */,
+				F8DE3FE72A363505001BCADA /* MainTabBarController.swift in Sources */,
 				F8B502A32A362E4900471387 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -244,7 +256,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -298,7 +310,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -320,7 +332,6 @@
 				INFOPLIST_FILE = Unsplash/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -349,7 +360,6 @@
 				INFOPLIST_FILE = Unsplash/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
