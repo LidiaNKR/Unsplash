@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F81CB4E42A371E0900BA6466 /* RandomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81CB4E32A371E0900BA6466 /* RandomCollectionViewCell.swift */; };
+		F81CB4E62A3740A200BA6466 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81CB4E52A3740A200BA6466 /* SearchController.swift */; };
 		F8B502A12A362E4900471387 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B502A02A362E4900471387 /* AppDelegate.swift */; };
 		F8B502A32A362E4900471387 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B502A22A362E4900471387 /* SceneDelegate.swift */; };
-		F8B502A52A362E4900471387 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B502A42A362E4900471387 /* ViewController.swift */; };
+		F8B502A52A362E4900471387 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B502A42A362E4900471387 /* DetailViewController.swift */; };
 		F8B502AA2A362E4B00471387 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8B502A92A362E4B00471387 /* Assets.xcassets */; };
 		F8B502AD2A362E4B00471387 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8B502AB2A362E4B00471387 /* LaunchScreen.storyboard */; };
 		F8DE3FE72A363505001BCADA /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DE3FE62A363505001BCADA /* MainTabBarController.swift */; };
@@ -18,10 +20,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F81CB4E32A371E0900BA6466 /* RandomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomCollectionViewCell.swift; sourceTree = "<group>"; };
+		F81CB4E52A3740A200BA6466 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		F8B5029D2A362E4900471387 /* Unsplash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Unsplash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8B502A02A362E4900471387 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8B502A22A362E4900471387 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F8B502A42A362E4900471387 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F8B502A42A362E4900471387 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		F8B502A92A362E4B00471387 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F8B502AC2A362E4B00471387 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F8B502AE2A362E4B00471387 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 				F8B502B82A3631C000471387 /* SupportingFiles */,
 				F8B502B72A36317300471387 /* Services */,
 				F8B502B62A36316F00471387 /* View */,
+				F81CB4E52A3740A200BA6466 /* SearchController.swift */,
+				F81CB4E32A371E0900BA6466 /* RandomCollectionViewCell.swift */,
 				F8B502B52A36316100471387 /* ViewControllers */,
 				F8B502B42A36315A00471387 /* Models */,
 			);
@@ -79,7 +85,7 @@
 		F8B502B52A36316100471387 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				F8B502A42A362E4900471387 /* ViewController.swift */,
+				F8B502A42A362E4900471387 /* DetailViewController.swift */,
 				F8DE3FE62A363505001BCADA /* MainTabBarController.swift */,
 				F8DE3FE82A3638A4001BCADA /* RandomPhotoCollectionViewController.swift */,
 				F8DE3FEF2A3667BD001BCADA /* FavoritPhotoTableViewController.swift */,
@@ -184,7 +190,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8DE3FF02A3667BD001BCADA /* FavoritPhotoTableViewController.swift in Sources */,
-				F8B502A52A362E4900471387 /* ViewController.swift in Sources */,
+				F81CB4E42A371E0900BA6466 /* RandomCollectionViewCell.swift in Sources */,
+				F8B502A52A362E4900471387 /* DetailViewController.swift in Sources */,
+				F81CB4E62A3740A200BA6466 /* SearchController.swift in Sources */,
 				F8DE3FE92A3638A4001BCADA /* RandomPhotoCollectionViewController.swift in Sources */,
 				F8B502A12A362E4900471387 /* AppDelegate.swift in Sources */,
 				F8DE3FE72A363505001BCADA /* MainTabBarController.swift in Sources */,
