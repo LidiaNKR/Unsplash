@@ -9,22 +9,24 @@ import UIKit
 
 final class MainTabBarController: UITabBarController {
     
+    // MARK: - LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         generateTabBar()
         setTabBarAppearance()
     }
     
+    // MARK: - Private methods
     private func generateTabBar() {
         let layout = UICollectionViewFlowLayout()
         viewControllers = [
-            generateCollectionVC(
+            generateViewController(
                 viewController: UINavigationController(rootViewController:
                                                         RandomPhotoCollectionViewController(collectionViewLayout: layout)),
                 title: "Главная",
                 image: UIImage(systemName: "house.fill")
             ),
-            generateCollectionVC(
+            generateViewController(
                 viewController: UINavigationController(rootViewController:
                                                         FavoritPhotoTableViewController()),
                 title: "Избранное",
@@ -33,7 +35,7 @@ final class MainTabBarController: UITabBarController {
         ]
     }
     
-    private func generateCollectionVC(viewController: UINavigationController, title: String, image: UIImage?) -> UINavigationController {
+    private func generateViewController(viewController: UINavigationController, title: String, image: UIImage?) -> UINavigationController {
         viewController.tabBarItem.title = title
         viewController.tabBarItem.image = image
         return viewController
