@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SearchController: UISearchController, UISearchResultsUpdating {
+final class SearchController: UISearchController, UISearchResultsUpdating {
     
     //MARK: - Private properties
     private let searchController = UISearchController(searchResultsController: nil)

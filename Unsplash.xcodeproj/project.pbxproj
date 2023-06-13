@@ -9,19 +9,23 @@
 /* Begin PBXBuildFile section */
 		F81CB4E42A371E0900BA6466 /* RandomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81CB4E32A371E0900BA6466 /* RandomCollectionViewCell.swift */; };
 		F81CB4E62A3740A200BA6466 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81CB4E52A3740A200BA6466 /* SearchController.swift */; };
+		F81CB4E82A3756AA00BA6466 /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81CB4E72A3756AA00BA6466 /* FavoriteTableViewCell.swift */; };
 		F8B502A12A362E4900471387 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B502A02A362E4900471387 /* AppDelegate.swift */; };
 		F8B502A32A362E4900471387 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B502A22A362E4900471387 /* SceneDelegate.swift */; };
 		F8B502A52A362E4900471387 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B502A42A362E4900471387 /* DetailViewController.swift */; };
 		F8B502AA2A362E4B00471387 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8B502A92A362E4B00471387 /* Assets.xcassets */; };
 		F8B502AD2A362E4B00471387 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8B502AB2A362E4B00471387 /* LaunchScreen.storyboard */; };
+		F8BB949F2A38A25B0082FB49 /* ImagesImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BB949E2A38A25B0082FB49 /* ImagesImageView.swift */; };
+		F8BB94AC2A38AE3B0082FB49 /* LikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BB94AB2A38AE3B0082FB49 /* LikeButton.swift */; };
 		F8DE3FE72A363505001BCADA /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DE3FE62A363505001BCADA /* MainTabBarController.swift */; };
 		F8DE3FE92A3638A4001BCADA /* RandomPhotoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DE3FE82A3638A4001BCADA /* RandomPhotoCollectionViewController.swift */; };
-		F8DE3FF02A3667BD001BCADA /* FavoritPhotoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DE3FEF2A3667BD001BCADA /* FavoritPhotoTableViewController.swift */; };
+		F8DE3FF02A3667BD001BCADA /* FavoritePhotoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DE3FEF2A3667BD001BCADA /* FavoritePhotoTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F81CB4E32A371E0900BA6466 /* RandomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomCollectionViewCell.swift; sourceTree = "<group>"; };
 		F81CB4E52A3740A200BA6466 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
+		F81CB4E72A3756AA00BA6466 /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
 		F8B5029D2A362E4900471387 /* Unsplash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Unsplash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8B502A02A362E4900471387 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8B502A22A362E4900471387 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -29,9 +33,11 @@
 		F8B502A92A362E4B00471387 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F8B502AC2A362E4B00471387 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F8B502AE2A362E4B00471387 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F8BB949E2A38A25B0082FB49 /* ImagesImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesImageView.swift; sourceTree = "<group>"; };
+		F8BB94AB2A38AE3B0082FB49 /* LikeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButton.swift; sourceTree = "<group>"; };
 		F8DE3FE62A363505001BCADA /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		F8DE3FE82A3638A4001BCADA /* RandomPhotoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomPhotoCollectionViewController.swift; sourceTree = "<group>"; };
-		F8DE3FEF2A3667BD001BCADA /* FavoritPhotoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritPhotoTableViewController.swift; sourceTree = "<group>"; };
+		F8DE3FEF2A3667BD001BCADA /* FavoritePhotoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePhotoTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,12 +70,10 @@
 		F8B5029F2A362E4900471387 /* Unsplash */ = {
 			isa = PBXGroup;
 			children = (
+				F8BB94A82A38A41C0082FB49 /* App */,
+				F8BB94A02A38A34A0082FB49 /* Modules */,
 				F8B502B82A3631C000471387 /* SupportingFiles */,
 				F8B502B72A36317300471387 /* Services */,
-				F8B502B62A36316F00471387 /* View */,
-				F81CB4E52A3740A200BA6466 /* SearchController.swift */,
-				F81CB4E32A371E0900BA6466 /* RandomCollectionViewCell.swift */,
-				F8B502B52A36316100471387 /* ViewControllers */,
 				F8B502B42A36315A00471387 /* Models */,
 			);
 			path = Unsplash;
@@ -82,20 +86,20 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		F8B502B52A36316100471387 /* ViewControllers */ = {
+		F8B502B52A36316100471387 /* DetailViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				F8B502A42A362E4900471387 /* DetailViewController.swift */,
-				F8DE3FE62A363505001BCADA /* MainTabBarController.swift */,
-				F8DE3FE82A3638A4001BCADA /* RandomPhotoCollectionViewController.swift */,
-				F8DE3FEF2A3667BD001BCADA /* FavoritPhotoTableViewController.swift */,
 			);
-			path = ViewControllers;
+			path = DetailViewControllers;
 			sourceTree = "<group>";
 		};
 		F8B502B62A36316F00471387 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F81CB4E52A3740A200BA6466 /* SearchController.swift */,
+				F8BB949E2A38A25B0082FB49 /* ImagesImageView.swift */,
+				F8BB94AB2A38AE3B0082FB49 /* LikeButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -112,11 +116,104 @@
 			children = (
 				F8B502A92A362E4B00471387 /* Assets.xcassets */,
 				F8B502AE2A362E4B00471387 /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		F8BB94A02A38A34A0082FB49 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				F8B502B62A36316F00471387 /* View */,
+				F8BB94A72A38A3CF0082FB49 /* MainTabBarController */,
+				F8BB94A42A38A3980082FB49 /* RandomPhotoCollectionView */,
+				F8BB94A12A38A3560082FB49 /* FavoriteTableView */,
+				F8B502B52A36316100471387 /* DetailViewControllers */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		F8BB94A12A38A3560082FB49 /* FavoriteTableView */ = {
+			isa = PBXGroup;
+			children = (
+				F8BB94A22A38A3760082FB49 /* View */,
+				F8BB94A32A38A3870082FB49 /* ViewController */,
+			);
+			path = FavoriteTableView;
+			sourceTree = "<group>";
+		};
+		F8BB94A22A38A3760082FB49 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F81CB4E72A3756AA00BA6466 /* FavoriteTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F8BB94A32A38A3870082FB49 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F8DE3FEF2A3667BD001BCADA /* FavoritePhotoTableViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		F8BB94A42A38A3980082FB49 /* RandomPhotoCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				F8BB94A52A38A3A90082FB49 /* View */,
+				F8BB94A62A38A3B00082FB49 /* ViewController */,
+			);
+			path = RandomPhotoCollectionView;
+			sourceTree = "<group>";
+		};
+		F8BB94A52A38A3A90082FB49 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F81CB4E32A371E0900BA6466 /* RandomCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F8BB94A62A38A3B00082FB49 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F8DE3FE82A3638A4001BCADA /* RandomPhotoCollectionViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		F8BB94A72A38A3CF0082FB49 /* MainTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				F8DE3FE62A363505001BCADA /* MainTabBarController.swift */,
+			);
+			path = MainTabBarController;
+			sourceTree = "<group>";
+		};
+		F8BB94A82A38A41C0082FB49 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				F8BB94AA2A38A4F60082FB49 /* Controller */,
+				F8BB94A92A38A4E80082FB49 /* View */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		F8BB94A92A38A4E80082FB49 /* View */ = {
+			isa = PBXGroup;
+			children = (
 				F8B502AB2A362E4B00471387 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F8BB94AA2A38A4F60082FB49 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
 				F8B502A02A362E4900471387 /* AppDelegate.swift */,
 				F8B502A22A362E4900471387 /* SceneDelegate.swift */,
 			);
-			path = SupportingFiles;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,10 +286,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8DE3FF02A3667BD001BCADA /* FavoritPhotoTableViewController.swift in Sources */,
+				F8DE3FF02A3667BD001BCADA /* FavoritePhotoTableViewController.swift in Sources */,
 				F81CB4E42A371E0900BA6466 /* RandomCollectionViewCell.swift in Sources */,
+				F8BB949F2A38A25B0082FB49 /* ImagesImageView.swift in Sources */,
+				F8BB94AC2A38AE3B0082FB49 /* LikeButton.swift in Sources */,
 				F8B502A52A362E4900471387 /* DetailViewController.swift in Sources */,
 				F81CB4E62A3740A200BA6466 /* SearchController.swift in Sources */,
+				F81CB4E82A3756AA00BA6466 /* FavoriteTableViewCell.swift in Sources */,
 				F8DE3FE92A3638A4001BCADA /* RandomPhotoCollectionViewController.swift in Sources */,
 				F8B502A12A362E4900471387 /* AppDelegate.swift in Sources */,
 				F8DE3FE72A363505001BCADA /* MainTabBarController.swift in Sources */,

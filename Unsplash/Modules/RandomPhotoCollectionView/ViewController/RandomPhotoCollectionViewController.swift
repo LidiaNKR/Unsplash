@@ -10,12 +10,12 @@ import UIKit
 final class RandomPhotoCollectionViewController: UICollectionViewController {
     
     //MARK: - Private properties
-    private lazy var inset: CGFloat = 10
-    private lazy var sectionInserts = UIEdgeInsets(top: 20,
-                                              left: 20,
-                                              bottom: 20,
-                                              right: 20)
-    private lazy var cellWidth: CGFloat = (self.view.frame.width - 6 * inset) / 2
+    private lazy var inset: CGFloat = 2
+    private lazy var sectionInserts = UIEdgeInsets(top: 5,
+                                              left: 5,
+                                              bottom: 5,
+                                              right: 5)
+    private lazy var cellWidth: CGFloat = (self.view.frame.width - 10 * inset) / 2
     private lazy var cellHeight: CGFloat = cellWidth
     
     private let searchController = SearchController()
@@ -26,8 +26,7 @@ final class RandomPhotoCollectionViewController: UICollectionViewController {
         
         collectionView.register(RandomCollectionViewCell.self, forCellWithReuseIdentifier: RandomCollectionViewCell.identifier)
         collectionView.backgroundColor = .red
-        title = "Главная"
-        
+
         navigationItem.searchController = searchController
         setupNavigationBar()
     }
@@ -54,12 +53,8 @@ final class RandomPhotoCollectionViewController: UICollectionViewController {
 
         title = "Главная"
         navigationController?.navigationBar.prefersLargeTitles = true
-        
+
         let navBarAppearance = UINavigationBarAppearance()
-        navBarAppearance.configureWithOpaqueBackground()
-        navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.black]
-        navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.black]
-        
         navigationController?.navigationBar.standardAppearance = navBarAppearance
         navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
     }
@@ -68,7 +63,6 @@ final class RandomPhotoCollectionViewController: UICollectionViewController {
     // MARK: - UICollectionViewDelegateFlowLayout
 extension RandomPhotoCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
         return CGSize(width: cellWidth, height: cellHeight)
     }
     
@@ -78,9 +72,5 @@ extension RandomPhotoCollectionViewController: UICollectionViewDelegateFlowLayou
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return sectionInserts.left / 2
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: view.frame.width, height: 40)
     }
 }
