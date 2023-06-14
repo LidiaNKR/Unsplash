@@ -31,7 +31,8 @@ final class FavoriteTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.addSubview(favoriteImageView)
         contentView.addSubview(favoriteLabel)
-        createLayoutConstraint()
+        favoriteImageViewConstraint()
+        favoriteAuthorConstraint()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -39,26 +40,23 @@ final class FavoriteTableViewCell: UITableViewCell {
     }
     
     // MARK: - Private methods
-    private func createLayoutConstraint() {
-        let viewsVFL = ["image" : favoriteImageView, "label": favoriteLabel]
-        let metrics = ["size": contentView.frame.height]
-        
-        contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-[image]-|",
-                                                                  options: [],
-                                                                  metrics: metrics,
-                                                                  views: viewsVFL))
-        contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-[image(100)]-|",
-                                                                  options: [],
-                                                                  metrics: metrics,
-                                                                  views: viewsVFL))
-        contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-[label]-|",
-                                                                  options: [],
-                                                                  metrics: nil,
-                                                                  views: viewsVFL))
-        contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-[image]-[label]-|",
-                                                                  options: [],
-                                                                  metrics: nil,
-                                                                  views: viewsVFL))
+    private func favoriteImageViewConstraint() {
+        NSLayoutConstraint.activate([
+            favoriteImageView.heightAnchor.constraint(equalToConstant: contentView.frame.height),
+            favoriteImageView.widthAnchor.constraint(equalToConstant: (contentView.frame.width / 6) * 2),
+            favoriteImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
+            
+        ])
+    }
+    
+    private func favoriteAuthorConstraint() {
+        NSLayoutConstraint.activate([
+            favoriteLabel.heightAnchor.constraint(equalToConstant: contentView.frame.height),
+//            favoriteLabel.widthAnchor.constraint(equalToConstant: (contentView.frame.width / 6) * 4),
+            favoriteLabel.leadingAnchor.constraint(equalTo: favoriteImageView.trailingAnchor, constant: 8),
+            favoriteLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8)
+            
+        ])
     }
     
 }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F81BA3A72A39C2AB0074C525 /* DataFetcherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81BA3A62A39C2AB0074C525 /* DataFetcherService.swift */; };
+		F81BA3A92A39DA4B0074C525 /* ImageNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81BA3A82A39DA4B0074C525 /* ImageNetworkService.swift */; };
 		F81CB4E42A371E0900BA6466 /* RandomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81CB4E32A371E0900BA6466 /* RandomCollectionViewCell.swift */; };
 		F81CB4E62A3740A200BA6466 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81CB4E52A3740A200BA6466 /* SearchController.swift */; };
 		F81CB4E82A3756AA00BA6466 /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81CB4E72A3756AA00BA6466 /* FavoriteTableViewCell.swift */; };
@@ -17,16 +19,21 @@
 		F8B502AD2A362E4B00471387 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8B502AB2A362E4B00471387 /* LaunchScreen.storyboard */; };
 		F8BB949F2A38A25B0082FB49 /* ImagesImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BB949E2A38A25B0082FB49 /* ImagesImageView.swift */; };
 		F8BB94AC2A38AE3B0082FB49 /* LikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BB94AB2A38AE3B0082FB49 /* LikeButton.swift */; };
+		F8BB94B02A38F7070082FB49 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BB94AF2A38F7070082FB49 /* NetworkService.swift */; };
+		F8BB94B22A38FCE50082FB49 /* GalleryElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BB94B12A38FCE50082FB49 /* GalleryElement.swift */; };
+		F8BB94BC2A39042F0082FB49 /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BB94BB2A39042F0082FB49 /* NetworkDataFetcher.swift */; };
 		F8DE3FE72A363505001BCADA /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DE3FE62A363505001BCADA /* MainTabBarController.swift */; };
 		F8DE3FE92A3638A4001BCADA /* RandomPhotoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DE3FE82A3638A4001BCADA /* RandomPhotoCollectionViewController.swift */; };
 		F8DE3FF02A3667BD001BCADA /* FavoritePhotoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DE3FEF2A3667BD001BCADA /* FavoritePhotoTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F81BA3A62A39C2AB0074C525 /* DataFetcherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcherService.swift; sourceTree = "<group>"; };
+		F81BA3A82A39DA4B0074C525 /* ImageNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageNetworkService.swift; sourceTree = "<group>"; };
 		F81CB4E32A371E0900BA6466 /* RandomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomCollectionViewCell.swift; sourceTree = "<group>"; };
 		F81CB4E52A3740A200BA6466 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		F81CB4E72A3756AA00BA6466 /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
-		F8B5029D2A362E4900471387 /* Unsplash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Unsplash.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8B5029D2A362E4900471387 /* YourFavoritePhoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YourFavoritePhoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8B502A02A362E4900471387 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8B502A22A362E4900471387 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F8B502A42A362E4900471387 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +42,9 @@
 		F8B502AE2A362E4B00471387 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8BB949E2A38A25B0082FB49 /* ImagesImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesImageView.swift; sourceTree = "<group>"; };
 		F8BB94AB2A38AE3B0082FB49 /* LikeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButton.swift; sourceTree = "<group>"; };
+		F8BB94AF2A38F7070082FB49 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		F8BB94B12A38FCE50082FB49 /* GalleryElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryElement.swift; sourceTree = "<group>"; };
+		F8BB94BB2A39042F0082FB49 /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
 		F8DE3FE62A363505001BCADA /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		F8DE3FE82A3638A4001BCADA /* RandomPhotoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomPhotoCollectionViewController.swift; sourceTree = "<group>"; };
 		F8DE3FEF2A3667BD001BCADA /* FavoritePhotoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePhotoTableViewController.swift; sourceTree = "<group>"; };
@@ -62,7 +72,7 @@
 		F8B5029E2A362E4900471387 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F8B5029D2A362E4900471387 /* Unsplash.app */,
+				F8B5029D2A362E4900471387 /* YourFavoritePhoto.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -123,6 +133,8 @@
 		F8BB94A02A38A34A0082FB49 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				F8BB94BA2A3904060082FB49 /* Model */,
+				F8BB94B32A39030D0082FB49 /* PhotosNetworkService */,
 				F8B502B62A36316F00471387 /* View */,
 				F8BB94A72A38A3CF0082FB49 /* MainTabBarController */,
 				F8BB94A42A38A3980082FB49 /* RandomPhotoCollectionView */,
@@ -193,6 +205,8 @@
 		F8BB94A82A38A41C0082FB49 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				F8BB94AE2A38F63D0082FB49 /* Models */,
+				F8BB94AD2A38F6300082FB49 /* NetworkService */,
 				F8BB94AA2A38A4F60082FB49 /* Controller */,
 				F8BB94A92A38A4E80082FB49 /* View */,
 			);
@@ -216,12 +230,53 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		F8BB94AD2A38F6300082FB49 /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				F8BB94AF2A38F7070082FB49 /* NetworkService.swift */,
+				F81BA3A82A39DA4B0074C525 /* ImageNetworkService.swift */,
+			);
+			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		F8BB94AE2A38F63D0082FB49 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F8BB94B12A38FCE50082FB49 /* GalleryElement.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F8BB94B32A39030D0082FB49 /* PhotosNetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				F81BA3A62A39C2AB0074C525 /* DataFetcherService.swift */,
+			);
+			path = PhotosNetworkService;
+			sourceTree = "<group>";
+		};
+		F8BB94BA2A3904060082FB49 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F8BB94BD2A3904370082FB49 /* Responses */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F8BB94BD2A3904370082FB49 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				F8BB94BB2A39042F0082FB49 /* NetworkDataFetcher.swift */,
+			);
+			name = Responses;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F8B5029C2A362E4900471387 /* Unsplash */ = {
+		F8B5029C2A362E4900471387 /* YourFavoritePhoto */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F8B502B12A362E4B00471387 /* Build configuration list for PBXNativeTarget "Unsplash" */;
+			buildConfigurationList = F8B502B12A362E4B00471387 /* Build configuration list for PBXNativeTarget "YourFavoritePhoto" */;
 			buildPhases = (
 				F8B502992A362E4900471387 /* Sources */,
 				F8B5029A2A362E4900471387 /* Frameworks */,
@@ -231,9 +286,9 @@
 			);
 			dependencies = (
 			);
-			name = Unsplash;
+			name = YourFavoritePhoto;
 			productName = Unsplash;
-			productReference = F8B5029D2A362E4900471387 /* Unsplash.app */;
+			productReference = F8B5029D2A362E4900471387 /* YourFavoritePhoto.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -251,7 +306,7 @@
 					};
 				};
 			};
-			buildConfigurationList = F8B502982A362E4900471387 /* Build configuration list for PBXProject "Unsplash" */;
+			buildConfigurationList = F8B502982A362E4900471387 /* Build configuration list for PBXProject "YourFavoritePhoto" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -264,7 +319,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F8B5029C2A362E4900471387 /* Unsplash */,
+				F8B5029C2A362E4900471387 /* YourFavoritePhoto */,
 			);
 		};
 /* End PBXProject section */
@@ -286,16 +341,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F81BA3A92A39DA4B0074C525 /* ImageNetworkService.swift in Sources */,
 				F8DE3FF02A3667BD001BCADA /* FavoritePhotoTableViewController.swift in Sources */,
 				F81CB4E42A371E0900BA6466 /* RandomCollectionViewCell.swift in Sources */,
+				F81BA3A72A39C2AB0074C525 /* DataFetcherService.swift in Sources */,
 				F8BB949F2A38A25B0082FB49 /* ImagesImageView.swift in Sources */,
 				F8BB94AC2A38AE3B0082FB49 /* LikeButton.swift in Sources */,
 				F8B502A52A362E4900471387 /* DetailViewController.swift in Sources */,
+				F8BB94BC2A39042F0082FB49 /* NetworkDataFetcher.swift in Sources */,
 				F81CB4E62A3740A200BA6466 /* SearchController.swift in Sources */,
+				F8BB94B22A38FCE50082FB49 /* GalleryElement.swift in Sources */,
 				F81CB4E82A3756AA00BA6466 /* FavoriteTableViewCell.swift in Sources */,
 				F8DE3FE92A3638A4001BCADA /* RandomPhotoCollectionViewController.swift in Sources */,
 				F8B502A12A362E4900471387 /* AppDelegate.swift in Sources */,
 				F8DE3FE72A363505001BCADA /* MainTabBarController.swift in Sources */,
+				F8BB94B02A38F7070082FB49 /* NetworkService.swift in Sources */,
 				F8B502A32A362E4900471387 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -487,7 +547,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F8B502982A362E4900471387 /* Build configuration list for PBXProject "Unsplash" */ = {
+		F8B502982A362E4900471387 /* Build configuration list for PBXProject "YourFavoritePhoto" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F8B502AF2A362E4B00471387 /* Debug */,
@@ -496,7 +556,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F8B502B12A362E4B00471387 /* Build configuration list for PBXNativeTarget "Unsplash" */ = {
+		F8B502B12A362E4B00471387 /* Build configuration list for PBXNativeTarget "YourFavoritePhoto" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F8B502B22A362E4B00471387 /* Debug */,

@@ -20,6 +20,9 @@ final class RandomPhotoCollectionViewController: UICollectionViewController {
     
     private let searchController = SearchController()
     
+    private let dataFetcherService = DataFetcherService()
+    var photos: Gallery?
+    
     // MARK: - LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,16 +32,24 @@ final class RandomPhotoCollectionViewController: UICollectionViewController {
 
         navigationItem.searchController = searchController
         setupNavigationBar()
+        
+        dataFetcherService.fetchGallery { (photo) in
+            self.photos = photo
+            self.collectionView.reloadData()
+        }
     }
     
     
     // MARK: - UICollectionViewDataSource
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return searchController.isFiltering ? searchController.filteredPhoto.count : photos?.count ?? 0
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RandomCollectionViewCell.identifier, for: indexPath)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RandomCollectionViewCell.identifier, for: indexPath)  as? RandomCollectionViewCell else { return UICollectionViewCell() }
+        
+        let photo = searchController.isFiltering ? searchController.filteredPhoto[indexPath.item] : photos?[indexPath.item]
+        cell.configure(with: photo)
         return cell
     }
     
@@ -46,9 +57,11 @@ final class RandomPhotoCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
         let detailViewController = DetailViewController()
+        detailViewController.photo = searchController.isFiltering ? searchController.filteredPhoto[indexPath.item] : photos?[indexPath.item]
         navigationController?.pushViewController(detailViewController, animated: true)
     }
     
+    // MARK: - Private Methods
     private func setupNavigationBar() {
 
         title = "Главная"
@@ -74,3 +87,4 @@ extension RandomPhotoCollectionViewController: UICollectionViewDelegateFlowLayou
         return sectionInserts.left / 2
     }
 }
+

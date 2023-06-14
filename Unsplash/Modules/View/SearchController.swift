@@ -9,6 +9,9 @@ import UIKit
 
 final class SearchController: UISearchController, UISearchResultsUpdating {
     
+    var photos: Gallery?
+    var filteredPhoto: [GalleryElement] = []
+    
     //MARK: - Private properties
     private let searchController = UISearchController(searchResultsController: nil)
     
@@ -17,7 +20,7 @@ final class SearchController: UISearchController, UISearchResultsUpdating {
         return text.isEmpty
     }
     
-    private var isFiltering: Bool {
+    var isFiltering: Bool {
         return searchController.isActive && !searchBarIsEmpty
     }
     
@@ -48,10 +51,12 @@ final class SearchController: UISearchController, UISearchResultsUpdating {
     }
     
     private func filterContentForSearchText(_ searchText: String) {
-//        filteredChracter = model?.results.filter { author in
-//            author.lowercased().contains(searchText.lowercased())
-//        } ?? []
-//
+        searchController.searchResultsUpdater = self
+        filteredPhoto = photos?.filter { name in
+            guard let author = name.description else { return false }
+            return author.lowercased().contains(searchText.lowercased())
+        } ?? []
+
         RandomPhotoCollectionViewController().collectionView.reloadData()
     }
 }
