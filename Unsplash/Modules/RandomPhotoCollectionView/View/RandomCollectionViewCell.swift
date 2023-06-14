@@ -34,13 +34,17 @@ final class RandomCollectionViewCell: UICollectionViewCell {
         contentView.addSubview(randomAuthorLabel)
         contentView.addSubview(randomImageView)
 //        contentView.clipsToBounds = true
-//        createLayoutConstraint()
         randomImageViewConstraint()
         randomAuthorConstraint()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func configure(with photo: GalleryElement?) {
+        randomImageView.fetchImage(from: photo?.urls.regular ?? "")
+        randomAuthorLabel.text = photo?.description
     }
 
     // MARK: - Private methods
@@ -54,9 +58,10 @@ final class RandomCollectionViewCell: UICollectionViewCell {
     
     private func randomAuthorConstraint() {
         NSLayoutConstraint.activate([
-        randomAuthorLabel.heightAnchor.constraint(equalToConstant: (contentView.frame.height / 6) * 1),
+//        randomAuthorLabel.heightAnchor.constraint(equalToConstant: (contentView.frame.height / 6) * 1),
         randomAuthorLabel.widthAnchor.constraint(equalToConstant: contentView.frame.width),
-        randomAuthorLabel.topAnchor.constraint(equalTo: randomImageView.bottomAnchor, constant: 0)
+        randomAuthorLabel.topAnchor.constraint(equalTo: randomImageView.bottomAnchor, constant: 0),
+        randomAuthorLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0)
         ])
     }
 }

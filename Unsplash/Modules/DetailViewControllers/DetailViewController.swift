@@ -10,6 +10,8 @@ import UIKit
 final class DetailViewController: UIViewController {
     
     //MARK: - Private properties
+    var photo: GalleryElement?
+    
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -58,10 +60,17 @@ final class DetailViewController: UIViewController {
         likeButtonConstraint()
         detailLabelConstraint()
         
+        configure(with: photo)
+        
         view.backgroundColor = .gray
     }
     
     // MARK: - Private methods
+    private func configure(with photo: GalleryElement?) {
+        detailImageView.fetchImage(from: photo?.urls.regular ?? "")
+        detailLabel.text = photo?.description
+    }
+    
     private func scrollViewConstraint() {
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),

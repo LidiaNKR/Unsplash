@@ -9,6 +9,7 @@ import UIKit
 
 final class FavoritePhotoTableViewController: UITableViewController {
     
+    //MARK: - Private properties
     private let searchController = SearchController()
     
     // MARK: - LifeCycle Methods
