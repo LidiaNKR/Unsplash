@@ -36,6 +36,6 @@ struct Image: Decodable {
 
 //Ссылка на JSON
 enum URLS: String {
-    case unsplashApi = "https://api.unsplash.com/photos/?client_id="
+    case unsplashApi = "https://api.unsplash.com/photos/?client_id=ytLzYNFrB8Do2mxq-5SPBzFWuhnpd2o_ewIXxoHlit8"
 }
 
