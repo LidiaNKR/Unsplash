@@ -64,7 +64,7 @@
 		F8B502942A362E4900471387 = {
 			isa = PBXGroup;
 			children = (
-				F8B5029F2A362E4900471387 /* Unsplash */,
+				F8B5029F2A362E4900471387 /* YourFavoritePhoto */,
 				F8B5029E2A362E4900471387 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -77,23 +77,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F8B5029F2A362E4900471387 /* Unsplash */ = {
+		F8B5029F2A362E4900471387 /* YourFavoritePhoto */ = {
 			isa = PBXGroup;
 			children = (
 				F8BB94A82A38A41C0082FB49 /* App */,
 				F8BB94A02A38A34A0082FB49 /* Modules */,
 				F8B502B82A3631C000471387 /* SupportingFiles */,
-				F8B502B72A36317300471387 /* Services */,
-				F8B502B42A36315A00471387 /* Models */,
 			);
-			path = Unsplash;
-			sourceTree = "<group>";
-		};
-		F8B502B42A36315A00471387 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
+			path = YourFavoritePhoto;
 			sourceTree = "<group>";
 		};
 		F8B502B52A36316100471387 /* DetailViewControllers */ = {
@@ -112,13 +103,6 @@
 				F8BB94AB2A38AE3B0082FB49 /* LikeButton.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		F8B502B72A36317300471387 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Services;
 			sourceTree = "<group>";
 		};
 		F8B502B82A3631C000471387 /* SupportingFiles */ = {
