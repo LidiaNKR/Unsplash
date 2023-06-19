@@ -13,6 +13,8 @@
 		F81CB4E42A371E0900BA6466 /* RandomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81CB4E32A371E0900BA6466 /* RandomCollectionViewCell.swift */; };
 		F81CB4E62A3740A200BA6466 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81CB4E52A3740A200BA6466 /* SearchController.swift */; };
 		F81CB4E82A3756AA00BA6466 /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81CB4E72A3756AA00BA6466 /* FavoriteTableViewCell.swift */; };
+		F840F29A2A3A4834008E70F5 /* FavoritePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = F840F2992A3A4834008E70F5 /* FavoritePhoto.swift */; };
+		F840F29D2A3A4AFC008E70F5 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F840F29C2A3A4AFC008E70F5 /* StorageManager.swift */; };
 		F8B502A12A362E4900471387 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B502A02A362E4900471387 /* AppDelegate.swift */; };
 		F8B502A32A362E4900471387 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B502A22A362E4900471387 /* SceneDelegate.swift */; };
 		F8B502A52A362E4900471387 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B502A42A362E4900471387 /* DetailViewController.swift */; };
@@ -37,6 +39,8 @@
 		F81CB4E32A371E0900BA6466 /* RandomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomCollectionViewCell.swift; sourceTree = "<group>"; };
 		F81CB4E52A3740A200BA6466 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		F81CB4E72A3756AA00BA6466 /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
+		F840F2992A3A4834008E70F5 /* FavoritePhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePhoto.swift; sourceTree = "<group>"; };
+		F840F29C2A3A4AFC008E70F5 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		F8B5029D2A362E4900471387 /* YourFavoritePhoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YourFavoritePhoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8B502A02A362E4900471387 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8B502A22A362E4900471387 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +85,23 @@
 				CE686D358E946E1A81921A58 /* Pods-YourFavoritePhoto.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		F840F2972A3A4817008E70F5 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				F840F2982A3A481E008E70F5 /* Models */,
+				F840F29C2A3A4AFC008E70F5 /* StorageManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		F840F2982A3A481E008E70F5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F840F2992A3A4834008E70F5 /* FavoritePhoto.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		F8B502942A362E4900471387 = {
@@ -213,7 +234,7 @@
 		F8BB94A82A38A41C0082FB49 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				F8BB94AE2A38F63D0082FB49 /* Models */,
+				F840F2972A3A4817008E70F5 /* DataManager */,
 				F8BB94AD2A38F6300082FB49 /* NetworkService */,
 				F8BB94AA2A38A4F60082FB49 /* Controller */,
 				F8BB94A92A38A4E80082FB49 /* View */,
@@ -241,6 +262,7 @@
 		F8BB94AD2A38F6300082FB49 /* NetworkService */ = {
 			isa = PBXGroup;
 			children = (
+				F8BB94AE2A38F63D0082FB49 /* Models */,
 				F8BB94AF2A38F7070082FB49 /* NetworkService.swift */,
 				F81BA3A82A39DA4B0074C525 /* ImageNetworkService.swift */,
 			);
@@ -396,7 +418,9 @@
 				F81BA3A92A39DA4B0074C525 /* ImageNetworkService.swift in Sources */,
 				F8DE3FF02A3667BD001BCADA /* FavoritePhotoTableViewController.swift in Sources */,
 				F81CB4E42A371E0900BA6466 /* RandomCollectionViewCell.swift in Sources */,
+				F840F29D2A3A4AFC008E70F5 /* StorageManager.swift in Sources */,
 				F81BA3A72A39C2AB0074C525 /* DataFetcherService.swift in Sources */,
+				F840F29A2A3A4834008E70F5 /* FavoritePhoto.swift in Sources */,
 				F8BB949F2A38A25B0082FB49 /* ImagesImageView.swift in Sources */,
 				F8BB94AC2A38AE3B0082FB49 /* LikeButton.swift in Sources */,
 				F8B502A52A362E4900471387 /* DetailViewController.swift in Sources */,

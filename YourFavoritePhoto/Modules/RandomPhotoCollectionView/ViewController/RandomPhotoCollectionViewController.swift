@@ -63,7 +63,6 @@ final class RandomPhotoCollectionViewController: UICollectionViewController {
     
     // MARK: - Private Methods
     private func setupNavigationBar() {
-
         title = "Главная"
         navigationController?.navigationBar.prefersLargeTitles = true
 
