@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2DA96A30EEB99A44FF520D61 /* Pods_YourFavoritePhoto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19FC6FEA3A833923D4857E25 /* Pods_YourFavoritePhoto.framework */; };
 		F81BA3A72A39C2AB0074C525 /* DataFetcherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81BA3A62A39C2AB0074C525 /* DataFetcherService.swift */; };
 		F81BA3A92A39DA4B0074C525 /* ImageNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81BA3A82A39DA4B0074C525 /* ImageNetworkService.swift */; };
 		F81CB4E42A371E0900BA6466 /* RandomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81CB4E32A371E0900BA6466 /* RandomCollectionViewCell.swift */; };
 		F81CB4E62A3740A200BA6466 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81CB4E52A3740A200BA6466 /* SearchController.swift */; };
 		F81CB4E82A3756AA00BA6466 /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81CB4E72A3756AA00BA6466 /* FavoriteTableViewCell.swift */; };
+		F840F29A2A3A4834008E70F5 /* FavoritePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = F840F2992A3A4834008E70F5 /* FavoritePhoto.swift */; };
+		F840F29D2A3A4AFC008E70F5 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F840F29C2A3A4AFC008E70F5 /* StorageManager.swift */; };
 		F8B502A12A362E4900471387 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B502A02A362E4900471387 /* AppDelegate.swift */; };
 		F8B502A32A362E4900471387 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B502A22A362E4900471387 /* SceneDelegate.swift */; };
 		F8B502A52A362E4900471387 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B502A42A362E4900471387 /* DetailViewController.swift */; };
@@ -28,11 +31,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		19FC6FEA3A833923D4857E25 /* Pods_YourFavoritePhoto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YourFavoritePhoto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE686D358E946E1A81921A58 /* Pods-YourFavoritePhoto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YourFavoritePhoto.release.xcconfig"; path = "Target Support Files/Pods-YourFavoritePhoto/Pods-YourFavoritePhoto.release.xcconfig"; sourceTree = "<group>"; };
+		D6070CB7730C5FB836A98561 /* Pods-YourFavoritePhoto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YourFavoritePhoto.debug.xcconfig"; path = "Target Support Files/Pods-YourFavoritePhoto/Pods-YourFavoritePhoto.debug.xcconfig"; sourceTree = "<group>"; };
 		F81BA3A62A39C2AB0074C525 /* DataFetcherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcherService.swift; sourceTree = "<group>"; };
 		F81BA3A82A39DA4B0074C525 /* ImageNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageNetworkService.swift; sourceTree = "<group>"; };
 		F81CB4E32A371E0900BA6466 /* RandomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomCollectionViewCell.swift; sourceTree = "<group>"; };
 		F81CB4E52A3740A200BA6466 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		F81CB4E72A3756AA00BA6466 /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
+		F840F2992A3A4834008E70F5 /* FavoritePhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePhoto.swift; sourceTree = "<group>"; };
+		F840F29C2A3A4AFC008E70F5 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		F8B5029D2A362E4900471387 /* YourFavoritePhoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YourFavoritePhoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8B502A02A362E4900471387 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8B502A22A362E4900471387 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,17 +63,54 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DA96A30EEB99A44FF520D61 /* Pods_YourFavoritePhoto.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0CD9C208C2D49D2C6D2E0B63 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				19FC6FEA3A833923D4857E25 /* Pods_YourFavoritePhoto.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2CD6E2336C71F0F5782D81D1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D6070CB7730C5FB836A98561 /* Pods-YourFavoritePhoto.debug.xcconfig */,
+				CE686D358E946E1A81921A58 /* Pods-YourFavoritePhoto.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F840F2972A3A4817008E70F5 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				F840F2982A3A481E008E70F5 /* Models */,
+				F840F29C2A3A4AFC008E70F5 /* StorageManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		F840F2982A3A481E008E70F5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F840F2992A3A4834008E70F5 /* FavoritePhoto.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		F8B502942A362E4900471387 = {
 			isa = PBXGroup;
 			children = (
-				F8B5029F2A362E4900471387 /* Unsplash */,
+				F8B5029F2A362E4900471387 /* YourFavoritePhoto */,
 				F8B5029E2A362E4900471387 /* Products */,
+				2CD6E2336C71F0F5782D81D1 /* Pods */,
+				0CD9C208C2D49D2C6D2E0B63 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,23 +122,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F8B5029F2A362E4900471387 /* Unsplash */ = {
+		F8B5029F2A362E4900471387 /* YourFavoritePhoto */ = {
 			isa = PBXGroup;
 			children = (
 				F8BB94A82A38A41C0082FB49 /* App */,
 				F8BB94A02A38A34A0082FB49 /* Modules */,
 				F8B502B82A3631C000471387 /* SupportingFiles */,
-				F8B502B72A36317300471387 /* Services */,
-				F8B502B42A36315A00471387 /* Models */,
 			);
-			path = Unsplash;
-			sourceTree = "<group>";
-		};
-		F8B502B42A36315A00471387 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
+			path = YourFavoritePhoto;
 			sourceTree = "<group>";
 		};
 		F8B502B52A36316100471387 /* DetailViewControllers */ = {
@@ -112,13 +148,6 @@
 				F8BB94AB2A38AE3B0082FB49 /* LikeButton.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		F8B502B72A36317300471387 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Services;
 			sourceTree = "<group>";
 		};
 		F8B502B82A3631C000471387 /* SupportingFiles */ = {
@@ -205,7 +234,7 @@
 		F8BB94A82A38A41C0082FB49 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				F8BB94AE2A38F63D0082FB49 /* Models */,
+				F840F2972A3A4817008E70F5 /* DataManager */,
 				F8BB94AD2A38F6300082FB49 /* NetworkService */,
 				F8BB94AA2A38A4F60082FB49 /* Controller */,
 				F8BB94A92A38A4E80082FB49 /* View */,
@@ -233,6 +262,7 @@
 		F8BB94AD2A38F6300082FB49 /* NetworkService */ = {
 			isa = PBXGroup;
 			children = (
+				F8BB94AE2A38F63D0082FB49 /* Models */,
 				F8BB94AF2A38F7070082FB49 /* NetworkService.swift */,
 				F81BA3A82A39DA4B0074C525 /* ImageNetworkService.swift */,
 			);
@@ -278,9 +308,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F8B502B12A362E4B00471387 /* Build configuration list for PBXNativeTarget "YourFavoritePhoto" */;
 			buildPhases = (
+				2CAAEDDB7F067403C4487618 /* [CP] Check Pods Manifest.lock */,
 				F8B502992A362E4900471387 /* Sources */,
 				F8B5029A2A362E4900471387 /* Frameworks */,
 				F8B5029B2A362E4900471387 /* Resources */,
+				8F5D8F27CF368ECAB8DC950D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -336,6 +368,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2CAAEDDB7F067403C4487618 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YourFavoritePhoto-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8F5D8F27CF368ECAB8DC950D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YourFavoritePhoto/Pods-YourFavoritePhoto-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YourFavoritePhoto/Pods-YourFavoritePhoto-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YourFavoritePhoto/Pods-YourFavoritePhoto-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F8B502992A362E4900471387 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -344,7 +418,9 @@
 				F81BA3A92A39DA4B0074C525 /* ImageNetworkService.swift in Sources */,
 				F8DE3FF02A3667BD001BCADA /* FavoritePhotoTableViewController.swift in Sources */,
 				F81CB4E42A371E0900BA6466 /* RandomCollectionViewCell.swift in Sources */,
+				F840F29D2A3A4AFC008E70F5 /* StorageManager.swift in Sources */,
 				F81BA3A72A39C2AB0074C525 /* DataFetcherService.swift in Sources */,
+				F840F29A2A3A4834008E70F5 /* FavoritePhoto.swift in Sources */,
 				F8BB949F2A38A25B0082FB49 /* ImagesImageView.swift in Sources */,
 				F8BB94AC2A38AE3B0082FB49 /* LikeButton.swift in Sources */,
 				F8B502A52A362E4900471387 /* DetailViewController.swift in Sources */,
@@ -490,6 +566,7 @@
 		};
 		F8B502B22A362E4B00471387 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6070CB7730C5FB836A98561 /* Pods-YourFavoritePhoto.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -497,7 +574,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 69V683996A;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Unsplash/SupportingFiles/Info.plist;
+				INFOPLIST_FILE = YourFavoritePhoto/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -518,6 +595,7 @@
 		};
 		F8B502B32A362E4B00471387 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE686D358E946E1A81921A58 /* Pods-YourFavoritePhoto.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -525,7 +603,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 69V683996A;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Unsplash/SupportingFiles/Info.plist;
+				INFOPLIST_FILE = YourFavoritePhoto/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

@@ -16,10 +16,11 @@ struct GalleryElement: Decodable {
     let description: String? //описание
     let urls: Image //картинки
     let user: User //имя пользователя и его локация
-
+    let downloads: Int? //количество скачиваний
+    
     enum CodingKeys: String, CodingKey {
         case createdAt = "created_at"
-        case width, height, description, urls, user
+        case width, height, description, urls, user, downloads
     }
 }
 
@@ -36,6 +37,6 @@ struct Image: Decodable {
 
 //Ссылка на JSON
 enum URLS: String {
-    case unsplashApi = "https://api.unsplash.com/photos/?client_id="
+    case unsplashApi = "https://api.unsplash.com/photos/random?count=100&client_id=ytLzYNFrB8Do2mxq-5SPBzFWuhnpd2o_ewIXxoHlit8"
 }
 

@@ -12,7 +12,10 @@ final class DetailViewController: UIViewController {
     //MARK: - Private properties
     var photo: GalleryElement?
     
-    private let scrollView: UIScrollView = {
+    //MARK: - Private properties
+    private lazy var imageURL = photo?.urls.regular ?? "No UmageURL"
+    
+    private var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.backgroundColor = .blue
@@ -20,26 +23,27 @@ final class DetailViewController: UIViewController {
         return scrollView
     }()
     
-    private let contentView: UIView = {
+    private var contentView: UIView = {
         let contentView = UIView()
         contentView.translatesAutoresizingMaskIntoConstraints = false
         return contentView
     }()
     
-    private let detailImageView: ImagesImageView = {
+    private var detailImageView: ImagesImageView = {
         let imageView = ImagesImageView(frame: .zero)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
-    private let likeButton: LikeButton = {
-        let button = LikeButton()
+    private var likeButton: LikeButton = {
+        let button = LikeButton(frame: .zero)
+        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
-    private let detailLabel: UILabel = {
+    private var detailLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Описание"
         label.numberOfLines = 0
         label.backgroundColor = .green
         return label
@@ -48,10 +52,11 @@ final class DetailViewController: UIViewController {
     // MARK: - LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
         contentView.addSubview(detailImageView)
-        view.addSubview(likeButton)
+        contentView.addSubview(likeButton)
         contentView.addSubview(detailLabel)
         
         scrollViewConstraint()
@@ -67,8 +72,10 @@ final class DetailViewController: UIViewController {
     
     // MARK: - Private methods
     private func configure(with photo: GalleryElement?) {
-        detailImageView.fetchImage(from: photo?.urls.regular ?? "")
+        detailImageView.fetchImage(from: imageURL)
         detailLabel.text = photo?.description
+        likeButton.setInitialImage(imageURL: imageURL)
+        likeButton.imageURL = imageURL
     }
     
     private func scrollViewConstraint() {

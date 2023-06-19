@@ -16,7 +16,6 @@ final class ImagesImageView: UIImageView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         translatesAutoresizingMaskIntoConstraints = false
-//        image = UIImage(systemName: "house")
         contentMode = .scaleAspectFit
         clipsToBounds = true
         backgroundColor = .yellow
@@ -37,7 +36,7 @@ final class ImagesImageView: UIImageView {
             return
         }
         
-        /// Используем изображение из кеша, если есть
+        /// Используем изображение из кеша, если оно есть
         if let cahcedImage = getCachedImage(from: imageURL) {
             self.activityIndicator(true)
             image = cahcedImage
@@ -56,7 +55,7 @@ final class ImagesImageView: UIImageView {
     }
     
     // MARK: - Private methods
-    ///Работа с activityIndicator
+    ///Настройка с activityIndicator
     private func activityIndicator(_ isHidden: Bool) {
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
         activityIndicator.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
