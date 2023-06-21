@@ -51,7 +51,9 @@ final class FavoritePhotoTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let detailViewController = DetailViewController()
-//        detailViewController.favPhoto = favoritePhoto[indexPath.row]
+        let currentFavoritePhoto = favoritePhoto[indexPath.row]
+        detailViewController.image = currentFavoritePhoto.image
+        detailViewController.configure(image: currentFavoritePhoto.image, createAt: currentFavoritePhoto.createdAt, user: currentFavoritePhoto.user, location: currentFavoritePhoto.location, downloads: currentFavoritePhoto.downloads)
         navigationController?.pushViewController(detailViewController, animated: true)
     }
     

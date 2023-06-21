@@ -10,10 +10,7 @@ import UIKit
 final class DetailViewController: UIViewController {
     
     //MARK: - Private properties
-    var photo: GalleryElement?
-    
-    //MARK: - Private properties
-    private lazy var imageURL = photo?.urls.regular ?? "No UmageURL"
+    var image: String = ""
     
     private var detailImageView: ImagesImageView = {
         let imageView = ImagesImageView(frame: .zero)
@@ -44,26 +41,28 @@ final class DetailViewController: UIViewController {
         likeButtonConstraint()
         detailLabelConstraint()
         
-        configure(with: photo)
-        
         view.backgroundColor = .white
         navigationController?.navigationBar.prefersLargeTitles = false
     }
     
-    // MARK: - Private methods
-    private func configure(with photo: GalleryElement?) {
-        guard let photo = photo else { return }
-        navigationItem.title = photo.createdAt
-        detailImageView.fetchImage(from: imageURL)
-        detailLabel.text = """
-                        Автор: \(photo.user.username ?? "")
-                        Страна: \(photo.user.location ?? "")
-                        Скачиваний: \(photo.downloads ?? 0)
-                        """
-        likeButton.setInitialImage(imageURL: imageURL)
-        likeButton.imageURL = imageURL
+    override func viewWillAppear(_ animated: Bool) {
+        self.likeButton.setInitialImage(imageURL: image)
     }
     
+    // MARK: - Public methods
+
+    func configure(image: String, createAt: String, user: String, location: String, downloads: Int) {
+        navigationItem.title = createAt
+        detailImageView.fetchImage(from: image)
+        detailLabel.text = """
+                        Автор: \(user)
+                        Страна: \(location)
+                        Скачиваний: \(downloads)
+                        """
+        likeButton.imageURL = image
+    }
+    
+    // MARK: - Private methods
     private func detailImageConstraint() {
         view.addSubview(detailImageView)
         NSLayoutConstraint.activate([

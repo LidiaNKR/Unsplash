@@ -12,10 +12,8 @@ final class RandomPhotoCollectionViewController: UICollectionViewController {
     //MARK: - Private properties
     
     private let searchController = SearchController()
-    
     private let dataFetcherService = DataFetcherService()
-    private let layout = WaterFallLayout()
-    var photos = Gallery()
+    private var photos = Gallery()
     
     // MARK: - LifeCycle Methods
     override func viewDidLoad() {
@@ -58,7 +56,15 @@ final class RandomPhotoCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
         let detailViewController = DetailViewController()
-        detailViewController.photo = searchController.isFiltering ? searchController.filteredPhoto[indexPath.item] : photos[indexPath.item]
+        if searchController.isFiltering {
+            let filteringItem = searchController.filteredPhoto[indexPath.item]
+            detailViewController.image = filteringItem.urls.regular ?? ""
+            detailViewController.configure(image: filteringItem.urls.regular ?? "", createAt: filteringItem.createdAt ?? "", user: filteringItem.user.username ?? "", location: filteringItem.user.location ?? "", downloads: filteringItem.downloads ?? 0)
+        } else {
+           let notfilteringItem = photos[indexPath.item]
+            detailViewController.image = notfilteringItem.urls.regular ?? ""
+            detailViewController.configure(image: notfilteringItem.urls.regular ?? "", createAt: notfilteringItem.createdAt ?? "", user: notfilteringItem.user.username ?? "", location: notfilteringItem.user.location ?? "", downloads: notfilteringItem.downloads ?? 0)
+        }
         navigationController?.pushViewController(detailViewController, animated: true)
     }
     
@@ -77,7 +83,6 @@ final class RandomPhotoCollectionViewController: UICollectionViewController {
         layout.delegate = self
         collectionView.collectionViewLayout = layout
     }
-    
 }
     
     // MARK: - UICollectionViewLayout
