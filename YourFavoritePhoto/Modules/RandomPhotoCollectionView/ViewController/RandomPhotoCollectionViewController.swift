@@ -10,45 +10,46 @@ import UIKit
 final class RandomPhotoCollectionViewController: UICollectionViewController {
     
     //MARK: - Private properties
-    private lazy var inset: CGFloat = 2
-    private lazy var sectionInserts = UIEdgeInsets(top: 5,
-                                              left: 5,
-                                              bottom: 5,
-                                              right: 5)
-    private lazy var cellWidth: CGFloat = (self.view.frame.width - 10 * inset) / 2
-    private lazy var cellHeight: CGFloat = cellWidth
     
     private let searchController = SearchController()
     
     private let dataFetcherService = DataFetcherService()
-    var photos: Gallery?
+    private let layout = WaterFallLayout()
+    var photos = Gallery()
     
     // MARK: - LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
         collectionView.register(RandomCollectionViewCell.self, forCellWithReuseIdentifier: RandomCollectionViewCell.identifier)
-        collectionView.backgroundColor = .red
-
         navigationItem.searchController = searchController
         setupNavigationBar()
+        setupCollectionViewItemSize()
         
         dataFetcherService.fetchGallery { (photo) in
+            guard let photo = photo else { return }
             self.photos = photo
             self.collectionView.reloadData()
         }
     }
     
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        
+        coordinator.animate { _ in
+            self.setupCollectionViewItemSize()
+        }
+    }
     
     // MARK: - UICollectionViewDataSource
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return searchController.isFiltering ? searchController.filteredPhoto.count : photos?.count ?? 0
+        return searchController.isFiltering ? searchController.filteredPhoto.count : photos.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RandomCollectionViewCell.identifier, for: indexPath)  as? RandomCollectionViewCell else { return UICollectionViewCell() }
-        
-        let photo = searchController.isFiltering ? searchController.filteredPhoto[indexPath.item] : photos?[indexPath.item]
+
+        let photo = searchController.isFiltering ? searchController.filteredPhoto[indexPath.item].urls.small : photos[indexPath.item].urls.small
         cell.configure(with: photo)
         return cell
     }
@@ -57,7 +58,7 @@ final class RandomPhotoCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
         let detailViewController = DetailViewController()
-        detailViewController.photo = searchController.isFiltering ? searchController.filteredPhoto[indexPath.item] : photos?[indexPath.item]
+        detailViewController.photo = searchController.isFiltering ? searchController.filteredPhoto[indexPath.item] : photos[indexPath.item]
         navigationController?.pushViewController(detailViewController, animated: true)
     }
     
@@ -70,20 +71,21 @@ final class RandomPhotoCollectionViewController: UICollectionViewController {
         navigationController?.navigationBar.standardAppearance = navBarAppearance
         navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
     }
+    
+    private func setupCollectionViewItemSize() {
+        let layout = WaterFallLayout()
+        layout.delegate = self
+        collectionView.collectionViewLayout = layout
+    }
+    
 }
-
-    // MARK: - UICollectionViewDelegateFlowLayout
-extension RandomPhotoCollectionViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: cellWidth, height: cellHeight)
-    }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return sectionInserts
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return sectionInserts.left / 2
+    // MARK: - UICollectionViewLayout
+extension RandomPhotoCollectionViewController: WaterFallLayoutDelegate {
+    func collectionView(_ collectionView: UICollectionView, sizeForPhotoAtIndexPath indexPath: IndexPath) -> CGSize {
+        let width = photos[indexPath.row].width ?? 180
+        let height = photos[indexPath.row].height ?? 180
+        return CGSize(width: width, height: height)
     }
 }
 

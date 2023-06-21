@@ -20,7 +20,7 @@ final class FavoritePhotoTableViewController: UITableViewController {
         super.viewDidLoad()
         
         tableView.register(FavoriteTableViewCell.self, forCellReuseIdentifier: FavoriteTableViewCell.identifier)
-        tableView.backgroundColor = .blue
+//        tableView.backgroundColor = .blue
         tableView.rowHeight = 100
         navigationItem.searchController = searchController
         setupNavigationBar()
