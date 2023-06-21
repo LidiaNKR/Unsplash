@@ -10,9 +10,7 @@ import RealmSwift
 class FavoritePhoto: Object {
     @objc dynamic var id = UUID().uuidString
     @objc dynamic var image = ""
-    @objc dynamic var widthImage = 0
-    @objc dynamic var heightImage = 0
-    @objc dynamic var descriptionPhoto = ""
+    @objc dynamic var location = ""
     @objc dynamic var user = ""
     @objc dynamic var createdAt = ""
     @objc dynamic var downloads = 0
