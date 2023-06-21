@@ -42,12 +42,12 @@ final class LikeButton: UIButton {
     ///Проверка текущего статуса ImageURL и установка изначальной картинки внешнего вида LikeButton
     func setInitialImage(imageURL: String) {
         ///Есть фото в базе Realm? Да/Нет
-        let fav = favoritePhotoBase.where {
+        let isCurrentPhotoInBase = favoritePhotoBase.where {
             $0.image.contains("\(imageURL)")
         }
 
         ///Установка картинки внешнего вида LikeButton, в завичимости от наличия ImageURL в БД Realm
-        if fav.isEmpty {
+        if isCurrentPhotoInBase.isEmpty {
             isFavotitePhoto = false
             setImage()
         } else {
@@ -92,8 +92,8 @@ final class LikeButton: UIButton {
     
     ///Удаление ImageURL из Realm
     private func deletePhoto() {
-        guard let currentFavoritePhoto = favoritePhotoBase.filter("image = '\(imageURL)'").first else {return}
-        self.storageManager.delete(favoritePhoto: currentFavoritePhoto)
+        guard let deletedCurrentFavoritePhoto = favoritePhotoBase.filter("image = '\(imageURL)'").first else {return}
+        self.storageManager.delete(favoritePhoto: deletedCurrentFavoritePhoto)
     }
 }
 

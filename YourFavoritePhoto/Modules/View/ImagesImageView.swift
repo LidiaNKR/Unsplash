@@ -18,7 +18,6 @@ final class ImagesImageView: UIImageView {
         translatesAutoresizingMaskIntoConstraints = false
         contentMode = .scaleAspectFit
         clipsToBounds = true
-        backgroundColor = .yellow
         addSubview(activityIndicator)
     }
 
@@ -27,11 +26,11 @@ final class ImagesImageView: UIImageView {
     }
     
     // MARK: - Public methods
-    func fetchImage(from url: String) {
+    func fetchImage(from url: String?) {
         
         activityIndicator(false)
         
-        guard let imageURL = URL(string: url) else {
+        guard let url = url, let imageURL = URL(string: url) else {
             image = #imageLiteral(resourceName: "defaultPicture")
             return
         }

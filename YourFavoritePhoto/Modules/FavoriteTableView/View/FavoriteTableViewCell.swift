@@ -11,7 +11,6 @@ final class FavoriteTableViewCell: UITableViewCell {
     
     //MARK: - Static properties
     static let identifier = "FavoriteTableViewCell"
-//    private var favoritePhoto: Results<FavoritePhoto>!
     
     //MARK: - Private properties
     private lazy var favoriteImageView: ImagesImageView = {
@@ -23,15 +22,12 @@ final class FavoriteTableViewCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Автор"
-        label.backgroundColor = .green
         return label
     }()
     
     //MARK: - Initializers
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        contentView.addSubview(favoriteImageView)
-        contentView.addSubview(favoriteLabel)
         favoriteImageViewConstraint()
         favoriteAuthorConstraint()
     }
@@ -42,21 +38,25 @@ final class FavoriteTableViewCell: UITableViewCell {
     
     func configure(with photo: FavoritePhoto) {
         favoriteImageView.fetchImage(from: photo.image)
-        favoriteLabel.text = photo.description
+        favoriteLabel.text = photo.user
     }
     
     // MARK: - Private methods
     private func favoriteImageViewConstraint() {
+        contentView.addSubview(favoriteImageView)
         NSLayoutConstraint.activate([
-            favoriteImageView.heightAnchor.constraint(equalToConstant: contentView.frame.height),
-            favoriteImageView.widthAnchor.constraint(equalToConstant: (contentView.frame.width / 6) * 2),
+            favoriteImageView.widthAnchor.constraint(equalToConstant: (contentView.frame.width / 5) * 2),
+            favoriteImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 4),
+            favoriteImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -4),
             favoriteImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
         ])
     }
     
     private func favoriteAuthorConstraint() {
+        contentView.addSubview(favoriteLabel)
         NSLayoutConstraint.activate([
-            favoriteLabel.heightAnchor.constraint(equalToConstant: contentView.frame.height),
+            favoriteLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 4),
+            favoriteLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -4),
             favoriteLabel.leadingAnchor.constraint(equalTo: favoriteImageView.trailingAnchor, constant: 8),
             favoriteLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8)
         ])

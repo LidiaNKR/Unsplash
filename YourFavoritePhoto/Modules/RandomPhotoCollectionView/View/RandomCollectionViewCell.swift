@@ -18,50 +18,34 @@ final class RandomCollectionViewCell: UICollectionViewCell {
         return imageView
     }()
     
-    private let randomAuthorLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Фото"
-        label.textAlignment = .center
-        label.backgroundColor = .green
-        return label
-    }()
-    
     //MARK: - Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
-        contentView.backgroundColor = .blue
-        contentView.addSubview(randomAuthorLabel)
-        contentView.addSubview(randomImageView)
-//        contentView.clipsToBounds = true
+        
         randomImageViewConstraint()
-        randomAuthorConstraint()
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        randomImageView.image = nil
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(with photo: GalleryElement?) {
-        randomImageView.fetchImage(from: photo?.urls.regular ?? "")
-        randomAuthorLabel.text = photo?.description
+    func configure(with photo: String?) {
+        randomImageView.fetchImage(from: photo)
     }
 
-    // MARK: - Private methods
+     // MARK: - Private methods
     private func randomImageViewConstraint() {
+        contentView.addSubview(randomImageView)
         NSLayoutConstraint.activate([
-        randomImageView.heightAnchor.constraint(equalToConstant: (contentView.frame.height / 6) * 5),
-        randomImageView.widthAnchor.constraint(equalToConstant: contentView.frame.width),
-        randomImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0)
-        ])
-    }
-    
-    private func randomAuthorConstraint() {
-        NSLayoutConstraint.activate([
-//        randomAuthorLabel.heightAnchor.constraint(equalToConstant: (contentView.frame.height / 6) * 1),
-        randomAuthorLabel.widthAnchor.constraint(equalToConstant: contentView.frame.width),
-        randomAuthorLabel.topAnchor.constraint(equalTo: randomImageView.bottomAnchor, constant: 0),
-        randomAuthorLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0)
+            randomImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0),
+            randomImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0),
+            randomImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 0),
+            randomImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 0)
         ])
     }
 }

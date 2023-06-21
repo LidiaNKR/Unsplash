@@ -15,37 +15,24 @@ final class DetailViewController: UIViewController {
     //MARK: - Private properties
     private lazy var imageURL = photo?.urls.regular ?? "No UmageURL"
     
-    private var scrollView: UIScrollView = {
-        let scrollView = UIScrollView()
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.backgroundColor = .blue
-        scrollView.alwaysBounceVertical = true
-        return scrollView
-    }()
-    
-    private var contentView: UIView = {
-        let contentView = UIView()
-        contentView.translatesAutoresizingMaskIntoConstraints = false
-        return contentView
-    }()
-    
     private var detailImageView: ImagesImageView = {
         let imageView = ImagesImageView(frame: .zero)
-        imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
     private var likeButton: LikeButton = {
         let button = LikeButton(frame: .zero)
-        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
     private var detailLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.backgroundColor = .white
+        label.textAlignment = .center
+        label.textColor = .black
+        label.alpha = 0.5
         label.numberOfLines = 0
-        label.backgroundColor = .green
         return label
     }()
     
@@ -53,74 +40,56 @@ final class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.addSubview(scrollView)
-        scrollView.addSubview(contentView)
-        contentView.addSubview(detailImageView)
-        contentView.addSubview(likeButton)
-        contentView.addSubview(detailLabel)
-        
-        scrollViewConstraint()
-        contentViewConstraint()
         detailImageConstraint()
         likeButtonConstraint()
         detailLabelConstraint()
         
         configure(with: photo)
         
-        view.backgroundColor = .gray
+        view.backgroundColor = .white
+        navigationController?.navigationBar.prefersLargeTitles = false
     }
     
     // MARK: - Private methods
     private func configure(with photo: GalleryElement?) {
+        guard let photo = photo else { return }
+        navigationItem.title = photo.createdAt
         detailImageView.fetchImage(from: imageURL)
-        detailLabel.text = photo?.description
+        detailLabel.text = """
+                        Автор: \(photo.user.username ?? "")
+                        Страна: \(photo.user.location ?? "")
+                        Скачиваний: \(photo.downloads ?? 0)
+                        """
         likeButton.setInitialImage(imageURL: imageURL)
         likeButton.imageURL = imageURL
     }
     
-    private func scrollViewConstraint() {
-        NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
-        ])
-    }
-    
-    private func contentViewConstraint() {
-        NSLayoutConstraint.activate([
-            contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
-            contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
-            contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
-            contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
-        ])
-    }
-    
     private func detailImageConstraint() {
+        view.addSubview(detailImageView)
         NSLayoutConstraint.activate([
-        detailImageView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 0),
-        detailImageView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: 0),
-        detailImageView.heightAnchor.constraint(equalToConstant: view.frame.height * 0.3),
-        detailImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0)
+            detailImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
+            detailImageView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0),
+            detailImageView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 0),
+            detailImageView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 0)
         ])
     }
-
+    
     private func likeButtonConstraint() {
+        view.addSubview(likeButton)
         NSLayoutConstraint.activate([
-        likeButton.topAnchor.constraint(equalTo: detailImageView.topAnchor, constant: 5),
-        likeButton.rightAnchor.constraint(equalTo: detailImageView.rightAnchor, constant: -5),
-        likeButton.heightAnchor.constraint(equalToConstant: 30),
-        likeButton.widthAnchor.constraint(equalToConstant: 30)
+            likeButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8),
+            likeButton.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -8),
+            likeButton.heightAnchor.constraint(equalToConstant: 30),
+            likeButton.widthAnchor.constraint(equalToConstant: 30)
         ])
     }
     
     private func detailLabelConstraint() {
+        view.addSubview(detailLabel)
         NSLayoutConstraint.activate([
-        detailLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 16),
-        detailLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -16),
-        detailLabel.topAnchor.constraint(equalTo: detailImageView.bottomAnchor, constant: 16),
-        detailLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16)
+            detailLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 0),
+            detailLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 0),
+            detailLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0)
         ])
     }
 }
