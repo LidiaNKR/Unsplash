@@ -9,9 +9,10 @@ import UIKit
 
 final class DetailViewController: UIViewController {
     
-    //MARK: - Private properties
-    var image: String = ""
+    // MARK: - Public properties
+    var presenter: DetailViewPresenterProtocol!
     
+    //MARK: - Private properties
     private var detailImageView: ImagesImageView = {
         let imageView = ImagesImageView(frame: .zero)
         return imageView
@@ -41,26 +42,15 @@ final class DetailViewController: UIViewController {
         likeButtonConstraint()
         detailLabelConstraint()
         
+//        presenter.configure()
+        
         view.backgroundColor = .white
         navigationController?.navigationBar.prefersLargeTitles = false
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        self.likeButton.setInitialImage(imageURL: image)
-    }
-    
-    // MARK: - Public methods
-
-    func configure(image: String, createAt: String, user: String, location: String, downloads: Int) {
-        navigationItem.title = createAt
-        detailImageView.fetchImage(from: image)
-        detailLabel.text = """
-                        Автор: \(user)
-                        Страна: \(location)
-                        Скачиваний: \(downloads)
-                        """
-        likeButton.imageURL = image
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        presenter.setInitialImage()
+//    }
     
     // MARK: - Private methods
     private func detailImageConstraint() {
@@ -90,6 +80,20 @@ final class DetailViewController: UIViewController {
             detailLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 0),
             detailLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0)
         ])
+    }
+}
+
+    // MARK: - Extensions
+extension DetailViewController: DetailViewProtocol {
+    func configure(image: String, createAt: String, description: String) {
+        navigationItem.title = createAt
+        detailImageView.fetchImage(from: image)
+        detailLabel.text = description
+        likeButton.imageURL = image
+    }
+    
+    func setInitialImage(image: String) {
+        self.likeButton.setInitialImage(imageURL: image)
     }
 }
 

@@ -7,7 +7,7 @@
 
 import RealmSwift
 
-class FavoritePhoto: Object {
+final class FavoritePhoto: Object {
     @objc dynamic var id = UUID().uuidString
     @objc dynamic var image = ""
     @objc dynamic var location = ""

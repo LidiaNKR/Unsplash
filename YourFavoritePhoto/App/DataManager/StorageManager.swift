@@ -7,12 +7,15 @@
 
 import RealmSwift
 
-class StorageManager {
-    static let shared = StorageManager()
-    let realm = try! Realm()
-    
-    private init() {}
-    
+protocol StorageManagerProtocol {
+    var realm: Realm { get set }
+    func save(favoritePhoto: FavoritePhoto)
+    func delete(favoritePhoto: FavoritePhoto)
+}
+
+final class StorageManager: StorageManagerProtocol {
+    var realm = try! Realm()
+
     // MARK: - Work with favorite photos
     ///Сохранение информации в БД
     func save(favoritePhoto: FavoritePhoto) {

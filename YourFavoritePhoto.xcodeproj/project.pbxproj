@@ -14,8 +14,14 @@
 		F81CB4E62A3740A200BA6466 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81CB4E52A3740A200BA6466 /* SearchController.swift */; };
 		F81CB4E82A3756AA00BA6466 /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81CB4E72A3756AA00BA6466 /* FavoriteTableViewCell.swift */; };
 		F825ED372A41B1A500E65CB9 /* WaterFallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F825ED362A41B1A400E65CB9 /* WaterFallLayout.swift */; };
+		F83163BF2A49EA3B00E7825F /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83163BE2A49EA3B00E7825F /* MainPresenter.swift */; };
 		F840F29A2A3A4834008E70F5 /* FavoritePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = F840F2992A3A4834008E70F5 /* FavoritePhoto.swift */; };
 		F840F29D2A3A4AFC008E70F5 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F840F29C2A3A4AFC008E70F5 /* StorageManager.swift */; };
+		F860F44F2A499F7000C84C2C /* RandomPhotoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F860F44E2A499F7000C84C2C /* RandomPhotoPresenter.swift */; };
+		F860F4512A49A15B00C84C2C /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = F860F4502A49A15B00C84C2C /* Router.swift */; };
+		F860F4532A49A21E00C84C2C /* AssemblerModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F860F4522A49A21E00C84C2C /* AssemblerModuleBuilder.swift */; };
+		F860F4562A49BA6C00C84C2C /* FavoritePhotoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F860F4552A49BA6C00C84C2C /* FavoritePhotoPresenter.swift */; };
+		F860F4582A49CD4800C84C2C /* DetailPhotoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F860F4572A49CD4800C84C2C /* DetailPhotoPresenter.swift */; };
 		F8B502A12A362E4900471387 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B502A02A362E4900471387 /* AppDelegate.swift */; };
 		F8B502A32A362E4900471387 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B502A22A362E4900471387 /* SceneDelegate.swift */; };
 		F8B502A52A362E4900471387 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B502A42A362E4900471387 /* DetailViewController.swift */; };
@@ -41,8 +47,14 @@
 		F81CB4E52A3740A200BA6466 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		F81CB4E72A3756AA00BA6466 /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
 		F825ED362A41B1A400E65CB9 /* WaterFallLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterFallLayout.swift; sourceTree = "<group>"; };
+		F83163BE2A49EA3B00E7825F /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		F840F2992A3A4834008E70F5 /* FavoritePhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePhoto.swift; sourceTree = "<group>"; };
 		F840F29C2A3A4AFC008E70F5 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		F860F44E2A499F7000C84C2C /* RandomPhotoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomPhotoPresenter.swift; sourceTree = "<group>"; };
+		F860F4502A49A15B00C84C2C /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		F860F4522A49A21E00C84C2C /* AssemblerModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblerModuleBuilder.swift; sourceTree = "<group>"; };
+		F860F4552A49BA6C00C84C2C /* FavoritePhotoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePhotoPresenter.swift; sourceTree = "<group>"; };
+		F860F4572A49CD4800C84C2C /* DetailPhotoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPhotoPresenter.swift; sourceTree = "<group>"; };
 		F8B5029D2A362E4900471387 /* YourFavoritePhoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YourFavoritePhoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8B502A02A362E4900471387 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8B502A22A362E4900471387 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +101,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		F83163C02A49EA6C00E7825F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				F83163BE2A49EA3B00E7825F /* MainPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		F840F2972A3A4817008E70F5 /* DataManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +124,14 @@
 				F840F2992A3A4834008E70F5 /* FavoritePhoto.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		F860F4542A49AFA800C84C2C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F8DE3FE62A363505001BCADA /* MainTabBarController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		F8B502942A362E4900471387 = {
@@ -134,12 +162,13 @@
 			path = YourFavoritePhoto;
 			sourceTree = "<group>";
 		};
-		F8B502B52A36316100471387 /* DetailViewControllers */ = {
+		F8B502B52A36316100471387 /* DetailViewControllerModule */ = {
 			isa = PBXGroup;
 			children = (
-				F8B502A42A362E4900471387 /* DetailViewController.swift */,
+				F8E8A0EF2A45E65A00AFAC26 /* View */,
+				F8E8A0F02A45E66100AFAC26 /* Presenter */,
 			);
-			path = DetailViewControllers;
+			path = DetailViewControllerModule;
 			sourceTree = "<group>";
 		};
 		F8B502B62A36316F00471387 /* View */ = {
@@ -167,46 +196,39 @@
 				F8BB94BA2A3904060082FB49 /* Model */,
 				F8BB94B32A39030D0082FB49 /* PhotosNetworkService */,
 				F8B502B62A36316F00471387 /* View */,
-				F8BB94A72A38A3CF0082FB49 /* MainTabBarController */,
-				F8BB94A42A38A3980082FB49 /* RandomPhotoCollectionView */,
-				F8BB94A12A38A3560082FB49 /* FavoriteTableView */,
-				F8B502B52A36316100471387 /* DetailViewControllers */,
+				F8BB94A72A38A3CF0082FB49 /* MainTabBarControllerModule */,
+				F8BB94A42A38A3980082FB49 /* RandomPhotoCollectionViewModule */,
+				F8BB94A12A38A3560082FB49 /* FavoriteTableViewModule */,
+				F8B502B52A36316100471387 /* DetailViewControllerModule */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
 		};
-		F8BB94A12A38A3560082FB49 /* FavoriteTableView */ = {
+		F8BB94A12A38A3560082FB49 /* FavoriteTableViewModule */ = {
 			isa = PBXGroup;
 			children = (
 				F8BB94A22A38A3760082FB49 /* View */,
-				F8BB94A32A38A3870082FB49 /* ViewController */,
+				F8E8A0ED2A45E62500AFAC26 /* Presenter */,
 			);
-			path = FavoriteTableView;
+			path = FavoriteTableViewModule;
 			sourceTree = "<group>";
 		};
 		F8BB94A22A38A3760082FB49 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				F81CB4E72A3756AA00BA6466 /* FavoriteTableViewCell.swift */,
+				F8DE3FEF2A3667BD001BCADA /* FavoritePhotoTableViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		F8BB94A32A38A3870082FB49 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				F8DE3FEF2A3667BD001BCADA /* FavoritePhotoTableViewController.swift */,
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
-		F8BB94A42A38A3980082FB49 /* RandomPhotoCollectionView */ = {
+		F8BB94A42A38A3980082FB49 /* RandomPhotoCollectionViewModule */ = {
 			isa = PBXGroup;
 			children = (
 				F8BB94A52A38A3A90082FB49 /* View */,
-				F8BB94A62A38A3B00082FB49 /* ViewController */,
+				F8E8A0EB2A45E5F200AFAC26 /* Presenter */,
 			);
-			path = RandomPhotoCollectionView;
+			path = RandomPhotoCollectionViewModule;
 			sourceTree = "<group>";
 		};
 		F8BB94A52A38A3A90082FB49 /* View */ = {
@@ -214,24 +236,18 @@
 			children = (
 				F81CB4E32A371E0900BA6466 /* RandomCollectionViewCell.swift */,
 				F825ED362A41B1A400E65CB9 /* WaterFallLayout.swift */,
+				F8DE3FE82A3638A4001BCADA /* RandomPhotoCollectionViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		F8BB94A62A38A3B00082FB49 /* ViewController */ = {
+		F8BB94A72A38A3CF0082FB49 /* MainTabBarControllerModule */ = {
 			isa = PBXGroup;
 			children = (
-				F8DE3FE82A3638A4001BCADA /* RandomPhotoCollectionViewController.swift */,
+				F860F4542A49AFA800C84C2C /* View */,
+				F83163C02A49EA6C00E7825F /* Presenter */,
 			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
-		F8BB94A72A38A3CF0082FB49 /* MainTabBarController */ = {
-			isa = PBXGroup;
-			children = (
-				F8DE3FE62A363505001BCADA /* MainTabBarController.swift */,
-			);
-			path = MainTabBarController;
+			path = MainTabBarControllerModule;
 			sourceTree = "<group>";
 		};
 		F8BB94A82A38A41C0082FB49 /* App */ = {
@@ -241,6 +257,8 @@
 				F8BB94AD2A38F6300082FB49 /* NetworkService */,
 				F8BB94AA2A38A4F60082FB49 /* Controller */,
 				F8BB94A92A38A4E80082FB49 /* View */,
+				F860F4502A49A15B00C84C2C /* Router.swift */,
+				F860F4522A49A21E00C84C2C /* AssemblerModuleBuilder.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -302,6 +320,38 @@
 				F8BB94BB2A39042F0082FB49 /* NetworkDataFetcher.swift */,
 			);
 			name = Responses;
+			sourceTree = "<group>";
+		};
+		F8E8A0EB2A45E5F200AFAC26 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				F860F44E2A499F7000C84C2C /* RandomPhotoPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		F8E8A0ED2A45E62500AFAC26 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				F860F4552A49BA6C00C84C2C /* FavoritePhotoPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		F8E8A0EF2A45E65A00AFAC26 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F8B502A42A362E4900471387 /* DetailViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F8E8A0F02A45E66100AFAC26 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				F860F4572A49CD4800C84C2C /* DetailPhotoPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -422,16 +472,22 @@
 				F8DE3FF02A3667BD001BCADA /* FavoritePhotoTableViewController.swift in Sources */,
 				F81CB4E42A371E0900BA6466 /* RandomCollectionViewCell.swift in Sources */,
 				F840F29D2A3A4AFC008E70F5 /* StorageManager.swift in Sources */,
+				F860F4532A49A21E00C84C2C /* AssemblerModuleBuilder.swift in Sources */,
+				F860F44F2A499F7000C84C2C /* RandomPhotoPresenter.swift in Sources */,
 				F81BA3A72A39C2AB0074C525 /* DataFetcherService.swift in Sources */,
 				F840F29A2A3A4834008E70F5 /* FavoritePhoto.swift in Sources */,
 				F8BB949F2A38A25B0082FB49 /* ImagesImageView.swift in Sources */,
 				F8BB94AC2A38AE3B0082FB49 /* LikeButton.swift in Sources */,
 				F8B502A52A362E4900471387 /* DetailViewController.swift in Sources */,
+				F860F4512A49A15B00C84C2C /* Router.swift in Sources */,
 				F8BB94BC2A39042F0082FB49 /* NetworkDataFetcher.swift in Sources */,
 				F81CB4E62A3740A200BA6466 /* SearchController.swift in Sources */,
+				F860F4562A49BA6C00C84C2C /* FavoritePhotoPresenter.swift in Sources */,
+				F83163BF2A49EA3B00E7825F /* MainPresenter.swift in Sources */,
 				F8BB94B22A38FCE50082FB49 /* GalleryElement.swift in Sources */,
 				F81CB4E82A3756AA00BA6466 /* FavoriteTableViewCell.swift in Sources */,
 				F8DE3FE92A3638A4001BCADA /* RandomPhotoCollectionViewController.swift in Sources */,
+				F860F4582A49CD4800C84C2C /* DetailPhotoPresenter.swift in Sources */,
 				F8B502A12A362E4900471387 /* AppDelegate.swift in Sources */,
 				F8DE3FE72A363505001BCADA /* MainTabBarController.swift in Sources */,
 				F8BB94B02A38F7070082FB49 /* NetworkService.swift in Sources */,

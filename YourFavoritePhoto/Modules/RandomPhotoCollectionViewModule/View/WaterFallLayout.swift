@@ -11,8 +11,8 @@ protocol WaterFallLayoutDelegate: AnyObject {
     func collectionView(_ collectionView: UICollectionView, sizeForPhotoAtIndexPath indexPath: IndexPath) -> CGSize
 }
 
-class WaterFallLayout: UICollectionViewLayout {
-
+final class WaterFallLayout: UICollectionViewLayout {
+    
     weak var delegate: WaterFallLayoutDelegate?
     
     ///Количество столбцов
@@ -69,7 +69,6 @@ class WaterFallLayout: UICollectionViewLayout {
             var cellHeight = (photoSize?.height ?? 180) * cellWidth / (photoSize?.width ?? 180)
             cellHeight = cellPadding * 2 + cellHeight
             
-            
             let frame = CGRect(x: xOffset[column], y: yOffset[column], width: cellWidth, height: cellHeight)
             let insetFrame = frame.insetBy(dx: cellPadding, dy: cellPadding)
             
@@ -96,7 +95,6 @@ class WaterFallLayout: UICollectionViewLayout {
                         break
                     }
                 }
-                
                 if isColumnChanged {
                     continue
                 }
@@ -122,6 +120,4 @@ class WaterFallLayout: UICollectionViewLayout {
         ///Извлекаем и возвращаем из кеша атрибуты макета, соответствующие запрошенному indexPath
         return cache[indexPath.item]
     }
-
-
 }

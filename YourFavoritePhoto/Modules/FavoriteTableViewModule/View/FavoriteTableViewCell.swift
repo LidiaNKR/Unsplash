@@ -21,7 +21,6 @@ final class FavoriteTableViewCell: UITableViewCell {
     private lazy var favoriteLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Автор"
         return label
     }()
     
@@ -36,9 +35,10 @@ final class FavoriteTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(with photo: FavoritePhoto) {
-        favoriteImageView.fetchImage(from: photo.image)
-        favoriteLabel.text = photo.user
+    // MARK: - Public methods
+    func configure(photo: String?, userName: String?) {
+        favoriteImageView.fetchImage(from: photo)
+        favoriteLabel.text = userName
     }
     
     // MARK: - Private methods
@@ -61,5 +61,4 @@ final class FavoriteTableViewCell: UITableViewCell {
             favoriteLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8)
         ])
     }
-    
 }

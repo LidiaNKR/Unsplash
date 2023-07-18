@@ -9,7 +9,7 @@ import UIKit
 
 final class SearchController: UISearchController, UISearchResultsUpdating {
     
-    private var photos: Gallery?
+    private var photos: [GalleryElement]?
     var filteredPhoto: [GalleryElement] = []
     
     //MARK: - Private properties

@@ -21,19 +21,20 @@ final class RandomCollectionViewCell: UICollectionViewCell {
     //MARK: - Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         randomImageViewConstraint()
-    }
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        randomImageView.image = nil
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Override methods
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        randomImageView.image = nil
+    }
+    
+    // MARK: - Public methods
     func configure(with photo: String?) {
         randomImageView.fetchImage(from: photo)
     }
