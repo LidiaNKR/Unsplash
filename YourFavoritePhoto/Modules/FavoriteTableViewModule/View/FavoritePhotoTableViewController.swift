@@ -6,43 +6,42 @@
 //
 
 import UIKit
-import RealmSwift
 
 final class FavoritePhotoTableViewController: UITableViewController {
     
     //MARK: - Private properties
     private let searchController = SearchController()
-    private let storageManager = StorageManager.shared
-    private var favoritePhoto: Results<FavoritePhoto>!
+    
+    //MARK: - Public properties
+    var presenter: FavoritePhotoPresenterProtocol!
     
     // MARK: - LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.register(FavoriteTableViewCell.self, forCellReuseIdentifier: FavoriteTableViewCell.identifier)
-//        tableView.backgroundColor = .blue
         tableView.rowHeight = 100
         navigationItem.searchController = searchController
         setupNavigationBar()
-        
-        favoritePhoto = storageManager.realm.objects(FavoritePhoto.self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        tableView.reloadData()
+        success()
     }
     
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return favoritePhoto.count
+        guard let presenter = presenter else { return 0 }
+        return presenter.favoritePhotoCount()
+        
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: FavoriteTableViewCell.identifier, for: indexPath)  as? FavoriteTableViewCell else { return UITableViewCell() }
         
-        let currentFavoritephoto = favoritePhoto[indexPath.row]
-        cell.configure(with: currentFavoritephoto)
+        let currentFavoritephoto = presenter.favoritePhotoGallery[indexPath.row]
+        cell.configure(photo: currentFavoritephoto.image, userName: currentFavoritephoto.user)
         
         return cell
     }
@@ -50,19 +49,16 @@ final class FavoritePhotoTableViewController: UITableViewController {
     // MARK: - UITableViewDelegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let detailViewController = DetailViewController()
-        let currentFavoritePhoto = favoritePhoto[indexPath.row]
-        detailViewController.image = currentFavoritePhoto.image
-        detailViewController.configure(image: currentFavoritePhoto.image, createAt: currentFavoritePhoto.createdAt, user: currentFavoritePhoto.user, location: currentFavoritePhoto.location, downloads: currentFavoritePhoto.downloads)
-        navigationController?.pushViewController(detailViewController, animated: true)
+        let currentFavoritePhoto = presenter.favoritePhotoGallery[indexPath.row]
+        presenter.tapOnTheFavoritePhoto(favoritePhotoGallery: currentFavoritePhoto)
     }
     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
-        let currentFavoritePhoto = favoritePhoto[indexPath.row]
+        let currentFavoritePhoto = presenter.favoritePhotoGallery[indexPath.row]
         
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (_, _, _) in
-            self.storageManager.delete(favoritePhoto: currentFavoritePhoto)
+            self.presenter.deleteFavoritePhoto(favoritePhoto: currentFavoritePhoto)
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
         
@@ -90,6 +86,12 @@ final class FavoritePhotoTableViewController: UITableViewController {
     }
     
     @objc private func edit() {
-        
+    }
+}
+
+    //MARK: - Extensions
+extension FavoritePhotoTableViewController: FavoritePhotoTableViewProtocol {
+    func success() {
+        tableView.reloadData()
     }
 }

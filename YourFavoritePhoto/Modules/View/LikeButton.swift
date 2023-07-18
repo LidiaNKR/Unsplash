@@ -12,11 +12,13 @@ final class LikeButton: UIButton {
     
     //MARK: - Private properties
     ///Доступ к менеджеру хранения
-    private let storageManager = StorageManager.shared
+    private let storageManager = StorageManager()
     ///Доступ к текущей БД
     private var favoritePhotoBase: Results<FavoritePhoto>!
     ///Избранное фото? - да/нет
     private var isFavotitePhoto: Bool = false
+    
+    var presenter: DetailViewPresenterProtocol!
     ///URL текущего фото
     var imageURL: String = ""
     
@@ -84,6 +86,7 @@ final class LikeButton: UIButton {
     private func savePhoto() {
         let newFavoritePhoto = FavoritePhoto()
         newFavoritePhoto.image = imageURL
+        newFavoritePhoto.user = "юзер"
         
         DispatchQueue.main.async {
             self.storageManager.save(favoritePhoto: newFavoritePhoto)

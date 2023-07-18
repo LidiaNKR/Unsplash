@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ImageNetworkService {
+final class ImageNetworkService {
     
     //Класс является синглтоном
     static var shared = ImageNetworkService()
