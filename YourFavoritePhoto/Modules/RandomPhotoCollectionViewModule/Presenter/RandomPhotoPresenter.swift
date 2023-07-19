@@ -50,5 +50,4 @@ final class RandomPhotoPresenter: RandomPhotoPresenterProtocol {
         let height = gallery?[indexPath.row].height ?? 180
         return CGSize(width: width, height: height)
     }
-
 }

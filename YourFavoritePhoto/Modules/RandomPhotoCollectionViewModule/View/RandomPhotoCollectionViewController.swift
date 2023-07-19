@@ -21,6 +21,7 @@ final class RandomPhotoCollectionViewController: UICollectionViewController {
         navigationItem.searchController = searchController
         setupNavigationBar()
         setupCollectionViewItemSize()
+        setupRefreshControl()
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -59,11 +60,28 @@ final class RandomPhotoCollectionViewController: UICollectionViewController {
         navigationController?.navigationBar.standardAppearance = navBarAppearance
         navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
     }
-    
+
     private func setupCollectionViewItemSize() {
         let layout = WaterFallLayout()
         layout.delegate = self
         collectionView.collectionViewLayout = layout
+    }
+    
+    private func setupRefreshControl() {
+        let refreshControl = UIRefreshControl()
+        refreshControl.attributedTitle = NSAttributedString(string: "Обновление...")
+        refreshControl.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
+        collectionView.refreshControl = refreshControl
+    }
+    
+    @objc private func didPullToRefresh() {
+        presenter.gallery?.removeAll()
+        presenter.fetchGallery()
+        collectionView.reloadData()
+        setupCollectionViewItemSize()
+        DispatchQueue.main.async {
+            self.collectionView.refreshControl?.endRefreshing()
+        }
     }
 }
 
