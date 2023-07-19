@@ -174,9 +174,7 @@
 		F8B502B62A36316F00471387 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F81CB4E52A3740A200BA6466 /* SearchController.swift */,
 				F8BB949E2A38A25B0082FB49 /* ImagesImageView.swift */,
-				F8BB94AB2A38AE3B0082FB49 /* LikeButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -193,8 +191,6 @@
 		F8BB94A02A38A34A0082FB49 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				F8BB94BA2A3904060082FB49 /* Model */,
-				F8BB94B32A39030D0082FB49 /* PhotosNetworkService */,
 				F8B502B62A36316F00471387 /* View */,
 				F8BB94A72A38A3CF0082FB49 /* MainTabBarControllerModule */,
 				F8BB94A42A38A3980082FB49 /* RandomPhotoCollectionViewModule */,
@@ -234,6 +230,7 @@
 		F8BB94A52A38A3A90082FB49 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F81CB4E52A3740A200BA6466 /* SearchController.swift */,
 				F81CB4E32A371E0900BA6466 /* RandomCollectionViewCell.swift */,
 				F825ED362A41B1A400E65CB9 /* WaterFallLayout.swift */,
 				F8DE3FE82A3638A4001BCADA /* RandomPhotoCollectionViewController.swift */,
@@ -285,6 +282,8 @@
 			children = (
 				F8BB94AE2A38F63D0082FB49 /* Models */,
 				F8BB94AF2A38F7070082FB49 /* NetworkService.swift */,
+				F8BB94BB2A39042F0082FB49 /* NetworkDataFetcher.swift */,
+				F81BA3A62A39C2AB0074C525 /* DataFetcherService.swift */,
 				F81BA3A82A39DA4B0074C525 /* ImageNetworkService.swift */,
 			);
 			path = NetworkService;
@@ -296,30 +295,6 @@
 				F8BB94B12A38FCE50082FB49 /* GalleryElement.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		F8BB94B32A39030D0082FB49 /* PhotosNetworkService */ = {
-			isa = PBXGroup;
-			children = (
-				F81BA3A62A39C2AB0074C525 /* DataFetcherService.swift */,
-			);
-			path = PhotosNetworkService;
-			sourceTree = "<group>";
-		};
-		F8BB94BA2A3904060082FB49 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				F8BB94BD2A3904370082FB49 /* Responses */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		F8BB94BD2A3904370082FB49 /* Responses */ = {
-			isa = PBXGroup;
-			children = (
-				F8BB94BB2A39042F0082FB49 /* NetworkDataFetcher.swift */,
-			);
-			name = Responses;
 			sourceTree = "<group>";
 		};
 		F8E8A0EB2A45E5F200AFAC26 /* Presenter */ = {
@@ -342,6 +317,7 @@
 			isa = PBXGroup;
 			children = (
 				F8B502A42A362E4900471387 /* DetailViewController.swift */,
+				F8BB94AB2A38AE3B0082FB49 /* LikeButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
