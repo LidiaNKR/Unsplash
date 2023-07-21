@@ -11,6 +11,7 @@ final class ImagesImageView: UIImageView {
     
     // MARK: - Public properties
     private let activityIndicator = UIActivityIndicatorView(style: .medium)
+    private let imageNetworkService: ImageNetworkServiceProtocol = ImageNetworkService()
     
     //MARK: - Initializers
     override init(frame: CGRect) {
@@ -43,7 +44,7 @@ final class ImagesImageView: UIImageView {
         }
         
         /// Если изображения в кеше нет, то гризим его из сети
-        ImageNetworkService.shared.fetchImage(from: imageURL) { (data, response) in
+        imageNetworkService.fetchImage(from: imageURL) { (data, response) in
             DispatchQueue.main.async {
                 self.activityIndicator(true)
                 self.image = UIImage(data: data)

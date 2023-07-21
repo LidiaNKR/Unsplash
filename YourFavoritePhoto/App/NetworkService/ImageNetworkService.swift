@@ -7,14 +7,16 @@
 
 import Foundation
 
-final class ImageNetworkService {
+protocol ImageNetworkServiceProtocol {
+    /// Загрузка изображения из сети.
+    /// - Parameters:
+    ///   - url: URL фотографии.
+    ///   - completion: Обработчик завершения, вызываемый в конце выполнения функции.
+    func fetchImage(from url: URL, completion: @escaping (Data, URLResponse) -> Void)
+}
+
+final class ImageNetworkService: ImageNetworkServiceProtocol {
     
-    //Класс является синглтоном
-    static var shared = ImageNetworkService()
-    
-    private init() {}
-    
-    ///Парсим JSON - image
     func fetchImage(from url: URL, completion: @escaping (Data, URLResponse) -> Void) {
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             
@@ -24,9 +26,7 @@ final class ImageNetworkService {
             }
             
             guard url == response.url else { return }
-            
             completion(data, response)
-            
         }.resume()
     }
 }

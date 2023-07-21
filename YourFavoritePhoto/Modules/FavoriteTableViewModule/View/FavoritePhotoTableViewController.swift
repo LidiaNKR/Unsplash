@@ -9,9 +9,6 @@ import UIKit
 
 final class FavoritePhotoTableViewController: UITableViewController {
     
-    //MARK: - Private properties
-    private let searchController = SearchController()
-    
     //MARK: - Public properties
     var presenter: FavoritePhotoPresenterProtocol!
     
@@ -21,7 +18,6 @@ final class FavoritePhotoTableViewController: UITableViewController {
         
         tableView.register(FavoriteTableViewCell.self, forCellReuseIdentifier: FavoriteTableViewCell.identifier)
         tableView.rowHeight = 100
-        navigationItem.searchController = searchController
         setupNavigationBar()
     }
     

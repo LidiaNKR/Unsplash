@@ -8,9 +8,8 @@
 import UIKit
 
 final class RandomPhotoCollectionViewController: UICollectionViewController {
-    
-    //MARK: - Private properties
-    private let searchController = SearchController()
+
+    //MARK: - Public properties
     var presenter: RandomPhotoPresenterProtocol!
     
     // MARK: - LifeCycle Methods
@@ -18,7 +17,7 @@ final class RandomPhotoCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         
         collectionView.register(RandomCollectionViewCell.self, forCellWithReuseIdentifier: RandomCollectionViewCell.identifier)
-        navigationItem.searchController = searchController
+        setupSearchController()
         setupNavigationBar()
         setupCollectionViewItemSize()
         setupRefreshControl()
@@ -33,13 +32,16 @@ final class RandomPhotoCollectionViewController: UICollectionViewController {
     
     // MARK: - UICollectionViewDataSource
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return searchController.isFiltering ? searchController.filteredPhoto.count : presenter.gallery?.count ?? 0
+        return presenter.gallery?.count ?? 0
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RandomCollectionViewCell.identifier, for: indexPath)  as? RandomCollectionViewCell else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: RandomCollectionViewCell.identifier,
+            for: indexPath
+        ) as? RandomCollectionViewCell else { return UICollectionViewCell() }
 
-        let photo = searchController.isFiltering ? searchController.filteredPhoto[indexPath.item].urls.small : presenter.gallery?[indexPath.item].urls.small
+        let photo = presenter.gallery?[indexPath.item].urls.small
         cell.configure(with: photo)
         return cell
     }
@@ -60,12 +62,6 @@ final class RandomPhotoCollectionViewController: UICollectionViewController {
         navigationController?.navigationBar.standardAppearance = navBarAppearance
         navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
     }
-
-    private func setupCollectionViewItemSize() {
-        let layout = WaterFallLayout()
-        layout.delegate = self
-        collectionView.collectionViewLayout = layout
-    }
     
     private func setupRefreshControl() {
         let refreshControl = UIRefreshControl()
@@ -77,7 +73,7 @@ final class RandomPhotoCollectionViewController: UICollectionViewController {
     @objc private func didPullToRefresh() {
         presenter.gallery?.removeAll()
         presenter.fetchGallery()
-        collectionView.reloadData()
+        success()
         setupCollectionViewItemSize()
         DispatchQueue.main.async {
             self.collectionView.refreshControl?.endRefreshing()
@@ -90,12 +86,40 @@ extension RandomPhotoCollectionViewController: RandomPhotoCollectionViewProtocol
     func success() {
         collectionView.reloadData()
     }
+    
+    func failure(error: Error) {
+        print(error.localizedDescription)
+    }
+    
+    func setupCollectionViewItemSize() {
+        let layout = WaterFallLayout()
+        layout.delegate = self
+        collectionView.collectionViewLayout = layout
+    }
+}
+    // MARK: - UISearchResultsUpdating
+extension RandomPhotoCollectionViewController: UISearchResultsUpdating {
+    private func setupSearchController() {
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Поиск"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let query = searchController.searchBar.text else { return }
+        presenter.updateSearchResults(query: query)
+    }
 }
 
     // MARK: - UICollectionViewLayout
 extension RandomPhotoCollectionViewController: WaterFallLayoutDelegate {
-    func collectionView(_ collectionView: UICollectionView, sizeForPhotoAtIndexPath indexPath: IndexPath) -> CGSize {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        sizeForPhotoAtIndexPath indexPath: IndexPath
+    ) -> CGSize {
         presenter.sizeForPhoto(for: indexPath)
     }
 }
-

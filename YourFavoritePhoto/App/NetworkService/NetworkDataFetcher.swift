@@ -7,41 +7,57 @@
 
 import Foundation
 
-protocol DataFetcher {
-    func fetchGenericJSONData<T: Decodable>(urlString: String, response: @escaping (T?) -> Void)
+protocol NetworkDataFetcherProtocol {
+    ///Получение общих данных по URL
+    /// - Parameters:
+    ///   - url: URL запроса.
+    ///   - completion: Обработчик завершения, в который возвращается результат выполнения функции.
+    func fetchGenericJSONData<T: Decodable>(url: URL, completion: @escaping (Result<T?, Error>) -> Void)
 }
 
-final class NetworkDataFetcher: DataFetcher {
-
-    var networking: Networking
+final class NetworkDataFetcher: NetworkDataFetcherProtocol {
+    var networking: NetworkServiceProtocol
     
-    init(networking: Networking = NetworkService()) {
+    init(networking: NetworkServiceProtocol = NetworkService()) {
         self.networking = networking
     }
     
-    func fetchGenericJSONData<T: Decodable>(urlString: String, response: @escaping (T?) -> Void) {
-        networking.request(urlString: urlString) { (data, error) in
+    func fetchGenericJSONData<T: Decodable>(url: URL, completion: @escaping (Result<T?, Error>) -> Void) {
+        networking.request(url: url) { (data, response, error) in
+            guard let httpResponse = response as? HTTPURLResponse, let data = data else {
+                print("Receive HTTP response error")
+                return
+            }
+            
             if let error = error {
                 print("Error received requesting data: \(error.localizedDescription)")
-                response(nil)
+                completion(.failure(error))
             }
+            
+            
+            guard self.errorHandler(httpResponse, completion: completion) else { return }
+            print(httpResponse.statusCode, response?.url?.path ?? 0)
 
-            let decoded = self.decodeJSON(type: T.self, from: data)
-            response(decoded)
-
+            let decoder = JSONDecoder()
+            
+            do {
+                let result = try decoder.decode(T.self, from: data)
+                DispatchQueue.main.async {
+                    completion(.success(result))
+                }
+            } catch {
+                completion(.failure(error))
+            }
         }
     }
-    
-    func decodeJSON<T: Decodable>(type: T.Type, from: Data?) -> T? {
-        let decoder = JSONDecoder()
-        guard let data = from else { return nil }
-        do {
-            let objects = try decoder.decode(type.self, from: data)
-//            print(objects)
-            return objects
-        } catch let jsonError {
-            print("Failed to decode JSON", jsonError)
-            return nil
+
+    private func errorHandler<T>(_ response: HTTPURLResponse, completion: ((Result<T, Error>) -> Void)) -> Bool {
+        if response.statusCode == 200 {
+            return true
+        } else {
+            guard let serverError = ServerError(rawValue: response.statusCode) else { return false }
+            completion(.failure(serverError))
+            return false
         }
     }
 }
