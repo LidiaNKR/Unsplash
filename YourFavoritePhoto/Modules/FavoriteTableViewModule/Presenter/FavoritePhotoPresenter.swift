@@ -9,7 +9,6 @@ import RealmSwift
 
 protocol FavoritePhotoTableViewProtocol: AnyObject {
     func success()
-//    func failure(error: Error)
 }
 
 protocol FavoritePhotoPresenterProtocol: AnyObject {
@@ -32,7 +31,6 @@ final class FavoritePhotoPresenter: FavoritePhotoPresenterProtocol {
         self.storageManager = storageManager
         self.router = router
         self.favoritePhotoGallery = storageManager.realm.objects(FavoritePhoto.self)
-//        print(favoritePhotoGallery!)
         fetchFavoritePhoto()
     }
     

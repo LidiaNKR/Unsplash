@@ -42,15 +42,9 @@ final class DetailViewController: UIViewController {
         likeButtonConstraint()
         detailLabelConstraint()
         
-//        presenter.configure()
-        
         view.backgroundColor = .white
         navigationController?.navigationBar.prefersLargeTitles = false
     }
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        presenter.setInitialImage()
-//    }
     
     // MARK: - Private methods
     private func detailImageConstraint() {

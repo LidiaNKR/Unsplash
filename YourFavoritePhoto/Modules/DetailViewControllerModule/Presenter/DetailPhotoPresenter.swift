@@ -14,7 +14,13 @@ protocol DetailViewProtocol: AnyObject {
 
 protocol DetailViewPresenterProtocol: AnyObject {
     init(view: DetailViewProtocol, router: RouterProtocol)
-    func configure(image: String, createAt: String, username: String, location: String, downloads: Int)
+    func configure(
+        image: String,
+        createAt: String,
+        username: String,
+        location: String,
+        downloads: Int
+    )
 }
 
 final class DetailPresenter: DetailViewPresenterProtocol {
@@ -26,7 +32,13 @@ final class DetailPresenter: DetailViewPresenterProtocol {
         self.router = router
     }
     
-    func configure(image: String, createAt: String, username: String, location: String, downloads: Int) {
+    func configure(
+        image: String,
+        createAt: String,
+        username: String,
+        location: String,
+        downloads: Int
+    ) {
         let image = image
         let createAt = String(createAt.prefix(10))
         let description = """

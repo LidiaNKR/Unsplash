@@ -8,18 +8,34 @@
 import Foundation
 
 protocol DataFetcherServiceProtocol {
-    func fetchGallery(completion: @escaping ([GalleryElement]?) -> Void)
+    ///Получение рандомных фотографий
+    /// - Parameters:
+    ///   - count: Количество получаемых фотографий (максимально - 30).
+    ///   - completion: Обработчик завершения, в который возвращается результат выполнения функции.
+    func fetchGallery(count: Int, completion: @escaping (Result<[GalleryElement]?, Error>) -> Void)
+    
+    /// Получение результата по поиску фотографий.
+    /// - Parameters:
+    ///   - query: Условие поиска.
+    ///   - orderBy: Вариант сортировки фотографий ("latest" и "relevant").
+    ///   - completion: Обработчик завершения, в который возвращается результат выполнения функции.
+    func searchPhoto(query: String, orderBy: String, completion: @escaping (Result<SearchPhoto?, Error>) -> Void)
 }
 
 final class DataFetcherService: DataFetcherServiceProtocol {
-    var networkDataFetcher: DataFetcher
+    var networkDataFetcher: NetworkDataFetcherProtocol
     
-    init(networkDataFetcher: DataFetcher = NetworkDataFetcher()) {
+    init(networkDataFetcher: NetworkDataFetcherProtocol = NetworkDataFetcher()) {
         self.networkDataFetcher = networkDataFetcher
     }
     
-    func fetchGallery(completion: @escaping ([GalleryElement]?) -> Void) {
-        let urlGallery = URLS.unsplashApi.rawValue
-        networkDataFetcher.fetchGenericJSONData(urlString: urlGallery, response: completion)
+    func fetchGallery(count: Int, completion: @escaping (Result<[GalleryElement]?, Error>) -> Void) {
+        guard let url = APIURL.randomPhotos(count: count).url else { return }
+        networkDataFetcher.fetchGenericJSONData(url: url, completion: completion)
+    }
+    
+    func searchPhoto(query: String, orderBy: String, completion: @escaping (Result<SearchPhoto?, Error>) -> Void) {
+        guard let url = APIURL.searchPhoto(query: query, orderBy: orderBy, count: APIConstant.elementCount).url else { return }
+        networkDataFetcher.fetchGenericJSONData(url: url, completion: completion)
     }
 }
