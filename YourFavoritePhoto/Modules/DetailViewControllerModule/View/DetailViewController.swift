@@ -13,13 +13,14 @@ final class DetailViewController: UIViewController {
     var presenter: DetailViewPresenterProtocol!
     
     //MARK: - Private properties
-    private var detailImageView: ImagesImageView = {
+    private lazy var detailImageView: ImagesImageView = {
         let imageView = ImagesImageView(frame: .zero)
         return imageView
     }()
     
-    private var likeButton: LikeButton = {
-        let button = LikeButton(frame: .zero)
+    private lazy var likeButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
@@ -44,6 +45,7 @@ final class DetailViewController: UIViewController {
         
         view.backgroundColor = .white
         navigationController?.navigationBar.prefersLargeTitles = false
+        likeButton.addTarget(self, action: #selector(pressed), for: .touchUpInside)
     }
     
     // MARK: - Private methods
@@ -75,19 +77,22 @@ final class DetailViewController: UIViewController {
             detailLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0)
         ])
     }
+    
+    @objc private func pressed() {
+        presenter?.pressed()
+    }
 }
 
     // MARK: - Extensions
 extension DetailViewController: DetailViewProtocol {
-    func configure(image: String, createAt: String, description: String) {
+    func configureDetailViewController(image: String, createAt: String, description: String) {
         navigationItem.title = createAt
         detailImageView.fetchImage(from: image)
         detailLabel.text = description
-        likeButton.imageURL = image
     }
     
-    func setInitialImage(image: String) {
-        self.likeButton.setInitialImage(imageURL: image)
+    func setImageLikeButton(imageName: String) {
+        likeButton.setImage(UIImage(named: imageName), for: .normal)
     }
 }
 

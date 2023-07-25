@@ -55,6 +55,7 @@ final class RandomPhotoCollectionViewController: UICollectionViewController {
     
     // MARK: - Private Methods
     private func setupNavigationBar() {
+        navigationItem.title = "Главная"
         title = "Главная"
         navigationController?.navigationBar.prefersLargeTitles = true
 
@@ -62,7 +63,7 @@ final class RandomPhotoCollectionViewController: UICollectionViewController {
         navigationController?.navigationBar.standardAppearance = navBarAppearance
         navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
     }
-    
+
     private func setupRefreshControl() {
         let refreshControl = UIRefreshControl()
         refreshControl.attributedTitle = NSAttributedString(string: "Обновление...")

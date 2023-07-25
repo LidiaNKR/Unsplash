@@ -15,6 +15,7 @@ final class FavoriteTableViewCell: UITableViewCell {
     //MARK: - Private properties
     private lazy var favoriteImageView: ImagesImageView = {
         let imageView = ImagesImageView(frame: .zero)
+        imageView.contentMode = .scaleAspectFill
         return imageView
     }()
     
