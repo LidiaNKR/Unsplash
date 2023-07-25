@@ -1,9 +1,14 @@
 # Unsplash
 
-Приложение с списком рандомных фотографий.
+Приложение с списком рандомных фотографий, подгружаемых из API Unsplash, с возможностью сохранения фотографий в избранное.
+
+# Дополнение к установка проекта
+1. Установить [CocoaPods](https://guides.cocoapods.org/using/getting-started.html)
+2. Открыть деррикторию проекта в терминале и вызвать комманду `pod install`
+3. В папке проекта открыть файл `*.xcworkspace`
 
 # Интерфейс
-1. Экран c списком случайных фотографий. По свайпу сверху-вниз происходит обновление фотографий. С помощью строки поиска можно найти интересующие пользователя фотографии.
+1. Экран c списком случайных фотографий. По свайпу вниз происходит обновление фотографий. С помощью строки поиска можно найти интересующие пользователя фотографии.
 ![product-screenshot](YourFavoritePhoto/Gifs/RandomView.gif)
 
 2. По нажатию на фотографию переходим на экран с детальной информацией по фотографии.
@@ -11,16 +16,15 @@
 По тапу на кнопку Like можно добавить / удалить фотографию из списка избранных.
 ![product-screenshot](YourFavoritePhoto/Gifs/DetailView.gif)
 
-3. Экран с списом избранных фотографий.
+3. Экран с списком избранных фотографий.
 На экране отображается избранная фотография и ее автор. По свайпу влево/нажатию на кнопу Edit можно удалить фотографию из списка избранных.
-По нажатию на фотографию переходим на экран 2 с идентичным интерфейсом и функционалом.
-![product-screenshot](YourFavoritePhoto/Gifs/FavoritePhotoView.gif) ![product-screenshot](YourFavoritePhoto/Gifs/FavoritePhotoView2.gif)
-<div style="width:360px;max-width:100%;"><div style="height:0;padding-bottom:216.94%;position:relative;"><iframe width="360" height="781" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameBorder="0" src="https://imgflip.com/embed/7tpe45"></iframe></div><p><a href="https://imgflip.com/gif/7tpe45">via Imgflip</a></p></div>
+По нажатию на фотографию переходим на экран #2 с идентичным интерфейсом и функционалом.
+![product-screenshot](YourFavoritePhoto/Gifs/FavoritePhotoView.gif)
 
 # Используемый стек технологий
 - Язык программирования - `Swift`
 - Интерфейс - `UIKit`
 - Архитектура - `MVP`
-- Верстка интерфейса - Code, AutoLayout
-- Frameworks: Realm, URLSession
+- Верстка интерфейса - `Code`, `AutoLayout`
+- Frameworks: `Realm`, `URLSession`
 - iOS 13+
