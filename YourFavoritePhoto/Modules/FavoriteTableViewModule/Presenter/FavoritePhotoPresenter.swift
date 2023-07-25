@@ -12,7 +12,9 @@ protocol FavoritePhotoTableViewProtocol: AnyObject {
 }
 
 protocol FavoritePhotoPresenterProtocol: AnyObject {
-    init(view: FavoritePhotoTableViewProtocol, storageManager: StorageManagerProtocol, router: RouterProtocol)
+    init(view: FavoritePhotoTableViewProtocol,
+         storageManager: StorageManagerProtocol,
+         router: RouterProtocol)
     var favoritePhotoGallery: Results<FavoritePhoto>! { get set }
     func favoritePhotoCount() -> Int
     func fetchFavoritePhoto()
@@ -26,7 +28,9 @@ final class FavoritePhotoPresenter: FavoritePhotoPresenterProtocol {
     let storageManager: StorageManagerProtocol
     var favoritePhotoGallery: Results<FavoritePhoto>!
     
-    required init(view: FavoritePhotoTableViewProtocol, storageManager: StorageManagerProtocol, router: RouterProtocol) {
+    required init(view: FavoritePhotoTableViewProtocol,
+                  storageManager: StorageManagerProtocol,
+                  router: RouterProtocol) {
         self.view = view
         self.storageManager = storageManager
         self.router = router

@@ -9,18 +9,15 @@ import UIKit
 
 final class MainTabBarController: UITabBarController {
     
-    //MARK: - Public properties
-    var presenter: MainTabBarPresenterProtocol!
-    
     // MARK: - LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-}
-
-    //MARK: - Extension
-extension MainTabBarController: MainTabBarProtocol {
-    func generateViewController() {
+        
+    private func configureViewController(viewController: UINavigationController, title: String, image: UIImage?) -> UINavigationController {
+        viewController.tabBarItem.title = title
+        viewController.tabBarItem.image = image
+        return viewController
     }
 }
 

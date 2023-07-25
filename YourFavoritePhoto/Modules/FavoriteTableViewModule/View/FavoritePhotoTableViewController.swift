@@ -63,25 +63,14 @@ final class FavoritePhotoTableViewController: UITableViewController {
     
     // MARK: - Private methods
     private func setupNavigationBar() {
-
-        title = "Избранное"
-        navigationController?.navigationBar.prefersLargeTitles = true
-
         let navBarAppearance = UINavigationBarAppearance()
         navigationController?.navigationBar.standardAppearance = navBarAppearance
         navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
-        
-        // Добавление кнопки редактирования на экране
-        navigationItem.rightBarButtonItem = UIBarButtonItem(
-            barButtonSystemItem: .edit,
-            target: self,
-            action: #selector(edit)
-        )
-        
         navigationController?.navigationBar.tintColor = .black
-    }
-    
-    @objc private func edit() {
+        navigationController?.navigationBar.prefersLargeTitles = true
+        title = "Избранное"
+        
+        navigationItem.rightBarButtonItem = editButtonItem
     }
 }
 

@@ -19,8 +19,6 @@ final class AssemblerModuleBuilder: AssemblerBuilderProtocol {
     
     func createTabBarModule(router: RouterProtocol) -> UITabBarController {
         let view = MainTabBarController()
-        let presenter = MainPresenter(view: view, router: router)
-        view.presenter = presenter
         return view
     }
     
@@ -42,28 +40,18 @@ final class AssemblerModuleBuilder: AssemblerBuilderProtocol {
     
     func createDetailRandomPhotoViewModule(gallery: GalleryElement?, router: RouterProtocol) -> UIViewController {
         let view = DetailViewController()
-        let presenter = DetailPresenter(view: view, router: router)
-        presenter.configure(
-            image: gallery?.urls.regular ?? "",
-            createAt: gallery?.createdAt ?? "",
-            username: gallery?.user.username ?? "",
-            location: gallery?.user.location ?? "",
-            downloads: gallery?.downloads ?? 0
-        )
+        let storageManager = StorageManager()
+        let presenter = DetailPresenter(view: view, router: router, storageManager: storageManager)
+        presenter.configureGalleryDetailViewController(gallery: gallery)
         view.presenter = presenter
         return view
     }
     
     func createDetailFavoritePhotoViewModule(favoritePhoto: FavoritePhoto?, router: RouterProtocol) -> UIViewController {
         let view = DetailViewController()
-        let presenter = DetailPresenter(view: view, router: router)
-        presenter.configure(
-            image: favoritePhoto?.image ?? "",
-            createAt: favoritePhoto?.createdAt ?? "",
-            username: favoritePhoto?.user ?? "",
-            location: favoritePhoto?.location ?? "",
-            downloads: favoritePhoto?.downloads ?? 0
-        )
+        let storageManager = StorageManager()
+        let presenter = DetailPresenter(view: view, router: router, storageManager: storageManager)
+        presenter.configureFavoriteDetailViewController(favoritePhoto: favoritePhoto)
         view.presenter = presenter
         return view
     }
