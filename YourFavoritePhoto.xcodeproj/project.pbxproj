@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2DA96A30EEB99A44FF520D61 /* Pods_YourFavoritePhoto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19FC6FEA3A833923D4857E25 /* Pods_YourFavoritePhoto.framework */; };
 		F81BA3A72A39C2AB0074C525 /* DataFetcherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81BA3A62A39C2AB0074C525 /* DataFetcherService.swift */; };
 		F81BA3A92A39DA4B0074C525 /* ImageNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81BA3A82A39DA4B0074C525 /* ImageNetworkService.swift */; };
 		F81CB4E42A371E0900BA6466 /* RandomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81CB4E32A371E0900BA6466 /* RandomCollectionViewCell.swift */; };
@@ -36,7 +35,23 @@
 		F8DE3FE72A363505001BCADA /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DE3FE62A363505001BCADA /* MainTabBarController.swift */; };
 		F8DE3FE92A3638A4001BCADA /* RandomPhotoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DE3FE82A3638A4001BCADA /* RandomPhotoCollectionViewController.swift */; };
 		F8DE3FF02A3667BD001BCADA /* FavoritePhotoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DE3FEF2A3667BD001BCADA /* FavoritePhotoTableViewController.swift */; };
+		F8E9B4B32A70313400BFFF77 /* Pods_YourFavoritePhoto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19FC6FEA3A833923D4857E25 /* Pods_YourFavoritePhoto.framework */; };
+		F8E9B4B42A70313400BFFF77 /* Pods_YourFavoritePhoto.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 19FC6FEA3A833923D4857E25 /* Pods_YourFavoritePhoto.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F8E9B4B52A70313400BFFF77 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F8E9B4B42A70313400BFFF77 /* Pods_YourFavoritePhoto.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		19FC6FEA3A833923D4857E25 /* Pods_YourFavoritePhoto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YourFavoritePhoto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,7 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DA96A30EEB99A44FF520D61 /* Pods_YourFavoritePhoto.framework in Frameworks */,
+				F8E9B4B32A70313400BFFF77 /* Pods_YourFavoritePhoto.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +352,7 @@
 				F8B5029A2A362E4900471387 /* Frameworks */,
 				F8B5029B2A362E4900471387 /* Resources */,
 				8F5D8F27CF368ECAB8DC950D /* [CP] Embed Pods Frameworks */,
+				F8E9B4B52A70313400BFFF77 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
