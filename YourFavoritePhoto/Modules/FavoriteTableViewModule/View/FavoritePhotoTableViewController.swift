@@ -68,6 +68,7 @@ final class FavoritePhotoTableViewController: UITableViewController {
         navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
         navigationController?.navigationBar.tintColor = .black
         navigationController?.navigationBar.prefersLargeTitles = true
+        
         title = "Избранное"
         
         navigationItem.rightBarButtonItem = editButtonItem
